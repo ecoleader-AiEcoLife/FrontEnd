@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 import Addmarkers from "../components/maps/Addmarkets";
 
+const API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
+
 export default function map() {
   const [state, setState] = useState({
     center: {
@@ -47,7 +49,7 @@ export default function map() {
   }, []);
 
   const [loading, error] = useKakaoLoader({
-    appkey: "3f96fc58804b22536710a1b20d4bec0d",
+    appkey: API_KEY as string,
   });
 
   // 지도의 중심좌표
