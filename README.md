@@ -1,13 +1,12 @@
 **재활용품 홈페이지** 
 - ( Next.js 실행 명렁어 -> npm run dev )
 
-백엔드(Flamework: Spring) 과 협업한 재활용품 팀 프로젝트
+백엔드 (Flamework: Spring) 과 협업한 재활용품 팀 프로젝트
 
 <br/>
 
-- **Framework** -
-<br/>
-Next.js <br/>
+**Framework** <br/>
+1) Next.js <br/>
 - Typescript <br/>
 - CSS - tailwind <br/>
 
