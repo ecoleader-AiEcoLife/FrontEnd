@@ -8,8 +8,8 @@
 - **Framework** -
 <br/>
 Next.js <br/>
-- Typescript
-- CSS - tailwind
+- Typescript <br/>
+- CSS - tailwind <br/>
 
 <br/><br/>
 
