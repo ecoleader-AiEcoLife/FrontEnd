@@ -5,13 +5,13 @@
 
 <br/>
 
--Framework-
+- **Framework** -
 <br/>
 Next.js <br/>
 - Typescript
 - CSS - tailwind
 
-<br/><br/><br/>
+<br/><br/>
 
 <구현>
 
