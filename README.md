@@ -1,3 +1,35 @@
+**재활용품 홈페이지**
+
+백엔드 - Spring 과 협업한 재활용품 팀 프로젝트
+
+<Framework>
+Next.js
+CSS - tailwind
+
+<구현>
+1) 재활용 정보 기능
+   - 슬라이딩, 무한 스크롤
+
+3) 게시판 기능
+   - Restful API
+
+4) 재활용 쓰레기통 지도
+   - API , 카카오 라이브러리 이용
+6) 인공지능 AI GPT
+   - API
+
+
+
+
+
+
+
+
+
+
+
+***
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
