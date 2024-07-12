@@ -1,5 +1,5 @@
 **재활용품 홈페이지** 
-백엔드 (Flamework: Spring) 과 협업한 재활용품 팀 프로젝트
+백엔드 (Flamework: Spring) 과 협업한 재활용 웹사이트 팀 프로젝트
 
 <br/>
 
