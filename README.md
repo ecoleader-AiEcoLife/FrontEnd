@@ -1,6 +1,5 @@
 **재활용품 홈페이지** 
 - ( Next.js 실행 명렁어 -> npm run dev )
-
 백엔드 (Flamework: Spring) 과 협업한 재활용품 팀 프로젝트
 
 <br/>
@@ -18,10 +17,10 @@
    - 슬라이딩, 무한 스크롤
 
 3) 게시판 기능
-   - Restful API
+   - Restful API - axios
 
 4) 재활용 쓰레기통 지도
-   - API , 카카오 라이브러리 이용
+   - Restful API , 카카오 라이브러리 이용
 6) 인공지능 AI GPT
    - API
 
