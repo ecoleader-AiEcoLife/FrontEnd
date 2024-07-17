@@ -4,10 +4,10 @@ import EventMarker from "./EventMarker";
 
 interface PositionProps {
   title: string;
-  latlng: {
-    lat: number;
-    lng: number;
-  };
+  imgUrl: string;
+  location: string;
+  lat: number;
+  lng: number;
 }
 
 export default function Addmarkers() {
@@ -28,11 +28,22 @@ export default function Addmarkers() {
     getPositions();
   }, []);
 
+  useEffect(() => {
+    console.log("Positions:", positions);
+  }, [positions]);
+
   return (
-    <div>
-      {positions.map((position: PositionProps) => (
-        <EventMarker position={position.latlng} title={position.title} />
+    <>
+      {positions.map((position, index) => (
+        <EventMarker
+          key={index}
+          title={position.title}
+          imgUrl={position.imgUrl}
+          location={position.location}
+          lat={position.lat}
+          lng={position.lng}
+        />
       ))}
-    </div>
+    </>
   );
 }
