@@ -13,7 +13,7 @@
 <구현>
 
 1) 재활용 정보 기능
-   - 슬라이딩, 무한 스크롤
+   - 슬라이딩(Swiper) , Dynamic Routes
 
 3) 게시판 기능
    - Restful API - axios
