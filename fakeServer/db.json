@@ -1,0 +1,13 @@
+{
+    "positions": [
+        {
+            "imgUrl" : "http://example.com/image.jpg",
+            "lng" : 126.988449,
+            "location" : "서울특별시 용산구 용산2가동",
+            "id" : 1,
+            "title" : "서울타워",
+            "lat" : 37.551176
+          }
+    ]
+    
+  }

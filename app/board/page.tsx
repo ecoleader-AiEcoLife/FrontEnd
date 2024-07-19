@@ -34,7 +34,7 @@ export default function Board() {
   const handlePost = async () => {
     try {
       const newId = (board.length + 1).toString();
-      const newTitle = "새로운 TItle";
+      const newTitle = "새로운 Title";
       const newBody = "새로운 Body";
 
       await axios.post("http://localhost:3001/memo", {

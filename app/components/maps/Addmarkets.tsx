@@ -10,14 +10,14 @@ interface PositionProps {
   lng: number;
 }
 
+const URL = "http://localhost:3001/position";
+
 export default function Addmarkers() {
   const [positions, setPositions] = useState<PositionProps[]>([]);
 
   const getPositions = async () => {
     try {
-      const response = await axios.get<PositionProps[]>(
-        "http://localhost:3001/position"
-      );
+      const response = await axios.get<PositionProps[]>(URL);
       setPositions(response.data);
     } catch (error) {
       console.error(error);
