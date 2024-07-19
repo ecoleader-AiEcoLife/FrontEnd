@@ -12,13 +12,18 @@ interface Params {
 export default function RecyclePages({ params, searchParams }: Params) {
   return (
     <div className="bg-green-50 min-h-screen w-full flex justify-center items-center">
-      <div className="bg-white w-5/6 p-8 rounded-lg shadow-md flex flex-col justify-center items-center">
-        <h1 className="font-semibold">{searchParams.title}</h1>
-        <img
-          className="w-[400px]"
-          src={searchParams.imgUrl}
-          alt="이미지 없음"
-        />
+      <div className="bg-white w-5/6 p-8 rounded-lg shadow-md flex flex-col items-center">
+        <div>
+          <h1 className="font-semibold flex">{searchParams.title}</h1>
+          <img
+            className="w-[400px]"
+            src={searchParams.imgUrl}
+            alt="이미지 없음"
+          />
+        </div>
+        <div>
+          <p>종이류에 해당되는 </p>
+        </div>
       </div>
     </div>
   );

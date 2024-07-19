@@ -1,24 +1,84 @@
 {
-    "positions": [
+    "map":[
         {
-            "imgUrl" : "http://example.com/image.jpg",
-            "lng" : 126.988449,
-            "location" : "서울특별시 용산구 용산2가동",
+            "imgUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg/640px-%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg",
+            "lng" : 128.6105,
+            "location" : "대구광역시 북구 경대1",
+            "id" : 0,
+            "title" : "IT관",
+            "lat" : 35.8890
+          },
+          {
+            "imgUrl" : "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MDNfMTc3/MDAxNTk5MTQyNjAwMDMx.sfpOdLwOi_P8V69yMOgURkIYdiPCtwyZi84wtGKsmU0g.Tp1BDOyWWokwJ7o3_sQD2Ryb7dHc0vZzBk7Wyh1MnNQg.JPEG.daegu_news/SE-d0384482-6677-4f31-8eab-28b54817b67c.jpg?type=w800",
+            "lng" : 128.6110,
+            "location" : "대구광역시 북구 경대2",
             "id" : 1,
-            "title" : "서울타워",
-            "lat" : 37.551176
+            "title" : "전자관",
+            "lat" : 35.8885
+          },
+          {
+            "imgUrl" : "https://cdn.news.unn.net/news/photo/202207/530795_335500_527.jpg",
+            "lng" : 128.6106,
+            "location" : "대구광역시 북구 경대3",
+            "id" : 2,
+            "title" : "첨성관",
+            "lat" : 35.8894
           }
-    ],
+        ]
+    ,
 
-    "board": [
-        {
-            "imgUrl" : "http://example.com/image.jpg",
-            "lng" : 126.988449,
-            "location" : "서울특별시 용산구 용산2가동",
-            "id" : 1,
-            "title" : "서울타워",
-            "lat" : 37.551176
-          }
-    ]
-
+    "disboard":{"type":{"list":  [
+  {
+    "imgUrl": "https://cafe24.poxo.com/ec01/thewonscience/HOvhRhvOk+Cp2KY4JuusAnMbsJTQKwcP09iwEpvKlfYdoCDITk50GxcBghzPiKu0AOCLzLcK4+Li+aTBuoOsjg==/_/web/product/big/202206/2c49e9ecc279d823869d00e90f60c11a.jpeg",
+    "name": "플라스틱 병",
+    "id": 0
+  },
+  {
+    "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg",
+    "name": "종이 상자",
+    "id": 1
+  },
+  {
+    "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg",
+    "name": "유리병",
+    "id": 2
+  },
+  {
+    "imgUrl": "https://cdn.imweb.me/thumbnail/20211124/be34dd4f89cb9.jpg",
+    "name": "알루미늄 캔",
+    "id": 3
+  },
+  {
+    "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg",
+    "name": "신문지",
+    "id": 4
+  },
+  {
+    "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg",
+    "name": "비닐 봉지",
+    "id": 5
+  },
+  {
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCfGUYUJff3caVdoxEFfuiCYfkn1fwHwTIw&s",
+    "name": "철 캔",
+    "id": 6
+  },
+  {
+    "imgUrl": "https://mir-s3-cdn-cf.behance.net/projects/404/155826166577093.Y3JvcCwyMDA4LDE1NzAsMCwyMTg.png",
+    "name": "잡지",
+    "id": 7
+  },
+  {
+    "imgUrl": "https://cdn.imweb.me/thumbnail/20220211/e3650b99c2dfb.png",
+    "name": "우유 팩",
+    "id": 8
+  },
+  {
+    "imgUrl": "https://image1.marpple.co/files/u_193535/2022/4/original/0abc4abf04a80b4e9109500a16c6b5f487f6172b1.png?q=92&w=1480&f=jpeg&bg=f6f6f6",
+    "name": "옷",
+    "id": 9
+  }
+  ]
+    }  
+ }
 }
