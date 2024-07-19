@@ -1,8 +1,8 @@
 "use client";
 
+import Addmarkers from "@/components/maps/Addmarkets";
 import { useState, useEffect } from "react";
 import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
-import Addmarkers from "../components/maps/Addmarkets";
 
 const API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
 
