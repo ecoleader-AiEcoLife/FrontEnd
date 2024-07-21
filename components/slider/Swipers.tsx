@@ -22,7 +22,7 @@ const recycle: recycleProps[] = [
   },
   {
     id: "2",
-    title: "캔류",
+    title: "금속류",
     imgUrl:
       "https://www.thekmagazine.co.kr/data/theK_2206/images/sub/sub3/5/1.jpg",
   },

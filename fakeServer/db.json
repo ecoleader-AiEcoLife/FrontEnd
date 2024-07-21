@@ -1,5 +1,5 @@
 {
-    "map":[
+    "map":{"marker": [
         {
             "imgUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg/640px-%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg",
             "lng" : 128.6105,
@@ -25,60 +25,110 @@
             "lat" : 35.8894
           }
         ]
-    ,
+      },
 
-    "disboard":{"type":{"list":  [
-  {
-    "imgUrl": "https://cafe24.poxo.com/ec01/thewonscience/HOvhRhvOk+Cp2KY4JuusAnMbsJTQKwcP09iwEpvKlfYdoCDITk50GxcBghzPiKu0AOCLzLcK4+Li+aTBuoOsjg==/_/web/product/big/202206/2c49e9ecc279d823869d00e90f60c11a.jpeg",
-    "name": "플라스틱 병",
-    "id": 0
-  },
-  {
-    "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg",
-    "name": "종이 상자",
-    "id": 1
-  },
-  {
-    "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg",
-    "name": "유리병",
-    "id": 2
-  },
-  {
-    "imgUrl": "https://cdn.imweb.me/thumbnail/20211124/be34dd4f89cb9.jpg",
-    "name": "알루미늄 캔",
-    "id": 3
-  },
-  {
-    "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg",
-    "name": "신문지",
-    "id": 4
-  },
-  {
-    "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg",
-    "name": "비닐 봉지",
-    "id": 5
-  },
-  {
-    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCfGUYUJff3caVdoxEFfuiCYfkn1fwHwTIw&s",
-    "name": "철 캔",
-    "id": 6
-  },
-  {
-    "imgUrl": "https://mir-s3-cdn-cf.behance.net/projects/404/155826166577093.Y3JvcCwyMDA4LDE1NzAsMCwyMTg.png",
-    "name": "잡지",
-    "id": 7
-  },
-  {
-    "imgUrl": "https://cdn.imweb.me/thumbnail/20220211/e3650b99c2dfb.png",
-    "name": "우유 팩",
-    "id": 8
-  },
-  {
-    "imgUrl": "https://image1.marpple.co/files/u_193535/2022/4/original/0abc4abf04a80b4e9109500a16c6b5f487f6172b1.png?q=92&w=1480&f=jpeg&bg=f6f6f6",
-    "name": "옷",
-    "id": 9
-  }
-  ]
+    "disboard":{"list":{"type":  [
+      {
+        "id": 0,
+        "title": "플라스틱 병",
+        "type": {
+          "id":4,
+          "name":"플라스틱"},
+        "context": "내용물을 비우고 라벨 제거 후 분리배출",
+        "subcontext": "색깔이 있는 플라스틱 병은 재활용이 어려울 수 있음",
+        "imgUrl": "https://cafe24.poxo.com/ec01/thewonscience/HOvhRhvOk+Cp2KY4JuusAnMbsJTQKwcP09iwEpvKlfYdoCDITk50GxcBghzPiKu0AOCLzLcK4+Li+aTBuoOsjg==/_/web/product/big/202206/2c49e9ecc279d823869d00e90f60c11a.jpeg"
+      },
+      {
+        "id": 1,
+        "title": "종이 상자",
+        "type": {
+          "id":1,
+          "name":"종이"},
+        "context": "테이프, 스테이플 등 이물질 제거 후 분리배출",
+        "subcontext": "오염된 종이는 재활용이 어려우므로 일반쓰레기로 배출",
+        "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg"
+      },
+      {
+        "id": 2,
+        "title": "유리병",
+        "type": {
+          "id":3,
+          "name":"플라스틱"},
+        "context": "내용물을 비우고 라벨 제거 후 분리배출",
+        "subcontext": "깨진 유리는 신문지에 싸서 일반쓰레기로 배출",
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiQMh90X7I5lRslSReaFY0RCvGU-jMPAnsA&s"
+      },
+      {
+        "id": 3,
+        "title": "알루미늄 캔",
+        "type": {
+          "id":2,
+          "name":"금속"},
+        "context": "내용물을 비우고 압착하여 분리배출",
+        "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
+        "imgUrl": "https://cdn.imweb.me/thumbnail/20211124/be34dd4f89cb9.jpg"
+      },
+      {
+        "id": 4,
+        "title": "신문지",
+        "type": {
+          "id":1,
+          "name":"종이"},
+        "context": "물기에 젖지 않도록 하여 분리배출",
+        "subcontext": "광고지, 전단지 등과 함께 묶어서 배출 가능",
+        "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg"
+      },
+      {
+        "id": 5,
+        "title": "비닐 봉지",
+        "type": {
+          "id":5,
+          "name":"비닐"},
+        "context": "이물질을 제거하고 동일한 재질끼리 모아서 배출",
+        "subcontext": "오염된 비닐은 일반쓰레기로 배출",
+        "imgUrl": "https://img.danawa.com/prod_img/500000/503/277/img/7277503_1.jpg?_v=20190219155054"
+      },
+      {
+        "id": 6,
+        "title": "철 캔",
+        "type": {
+          "id":2,
+          "name":"금속"},
+        "context": "내용물을 비우고 가능한 압착하여 분리배출",
+        "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCfGUYUJff3caVdoxEFfuiCYfkn1fwHwTIw&s"
+      },
+      {
+        "id": 7,
+        "title": "잡지",
+        "type": {
+          "id":1,
+          "name":"종이"},
+        "context": "스프링 등 금속 부분을 제거하고 분리배출",
+        "subcontext": "비닐 코팅된 표지는 제거 후 배출",
+        "imgUrl": "https://mir-s3-cdn-cf.behance.net/projects/404/155826166577093.Y3JvcCwyMDA4LDE1NzAsMCwyMTg.png"
+      },
+      {
+        "id": 8,
+        "title": "우유 팩",
+        "type": {
+          "id":1,
+          "name":"종이"},
+        "context": "내용물을 비우고 헹군 후 압착하여 분리배출",
+        "subcontext": "일반 종이와 분리하여 배출",
+        "imgUrl": "https://cdn.imweb.me/thumbnail/20220211/e3650b99c2dfb.png"
+      },
+      {
+        "id": 9,
+        "title": "옷",
+        "type": {
+          "id":6,
+          "name":"의류"},
+        "context": "의류 수거함에 배출 또는 재사용 가능한 경우 기부",
+        "subcontext": "오염되거나 훼손된 의류는 일반쓰레기로 배출",
+        "imgUrl": "https://image1.marpple.co/files/u_193535/2022/4/original/0abc4abf04a80b4e9109500a16c6b5f487f6172b1.png?q=92&w=1480&f=jpeg&bg=f6f6f6"
+      }
+    ]
     }  
  }
 }
