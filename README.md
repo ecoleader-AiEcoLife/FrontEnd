@@ -12,13 +12,16 @@
 
 <구현>
 
-1) 재활용 정보 기능
-   - 슬라이딩(Swiper) , Dynamic Routes
+1) 재활용 정보 게시판 기능
+   - 슬라이딩(Swiper) , Dynamic Routes , Restful API
+  
+2) 상세한 제품 검색 기능
+   - filter함수
 
-3) 게시판 기능
+4) 게시판 기능
    - Restful API - axios
 
-4) 재활용 쓰레기통 지도
+5) 재활용 쓰레기통 지도
    - Restful API , 카카오 라이브러리 이용
 6) 인공지능 AI GPT
    - API
