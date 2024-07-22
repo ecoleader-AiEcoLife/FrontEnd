@@ -5,7 +5,8 @@ import Card from "./Card";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface recycleProps {
   id: string;
@@ -13,47 +14,26 @@ interface recycleProps {
   imgUrl: string;
 }
 
-const recycle: recycleProps[] = [
-  {
-    id: "1",
-    title: "종이류",
-    imgUrl:
-      "https://cdn-cms.packative.com/wp-content/uploads/2023/05/31102336/%EC%A2%85%EC%9D%B4-3.jpg",
-  },
-  {
-    id: "2",
-    title: "금속류",
-    imgUrl:
-      "https://www.thekmagazine.co.kr/data/theK_2206/images/sub/sub3/5/1.jpg",
-  },
-  {
-    id: "3",
-    title: "유리류",
-    imgUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-zLO3zYo3BCshIKcRQ4KEkNWamv2Jhab0w&s",
-  },
-  {
-    id: "4",
-    title: "플라스틱류",
-    imgUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTXGzB57tvM28s77Dga4hooEEmdKqajSsAKg&s",
-  },
-  {
-    id: "5",
-    title: "비닐류",
-    imgUrl:
-      "https://www.consumerpost.co.kr/news/photo/201808/201448_101950_3659.png",
-  },
-  {
-    id: "6",
-    title: "의류",
-    imgUrl:
-      "https://www.fashionnet.or.kr/wp-content/uploads/2022/11/kfashionnews-368.jpg",
-  },
-];
+const URL = "http://localhost:3001";
 
 export default function Swipers() {
+  const [recycle, setRecycle] = useState<recycleProps[]>([]);
   const [currentCard, setCurrentCard] = useState(0);
+
+  const getRecycle = async () => {
+    await axios
+      .get(`${URL}/disboard`)
+      .then((res) => {
+        setRecycle(res.data.main);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    getRecycle();
+  }, []);
 
   return (
     <div className="mt-12 flex flex-col justify-center items-center">
