@@ -19,12 +19,23 @@ interface DetailProps {
   title: string;
   type: { id: number; name: string };
   imgUrl: string;
+  context: string;
+  subcontext: string;
+}
+
+interface DecodeData {
+  title: string;
+  imgUrl: string;
 }
 
 const URL = "http://localhost:3001";
 
 export default function RecyclePages({ params, searchParams }: Params) {
   const [detail, setDetail] = useState<DetailProps[]>([]);
+  const [decodeData, setDecodeData] = useState<DecodeData>({
+    title: "",
+    imgUrl: "",
+  });
 
   const getDetailRecycle = async () => {
     try {
@@ -37,24 +48,39 @@ export default function RecyclePages({ params, searchParams }: Params) {
 
   useEffect(() => {
     getDetailRecycle();
-  }, []);
+    setDecodeData({
+      title: decodeURIComponent(searchParams.title),
+      imgUrl: decodeURIComponent(searchParams.imgUrl),
+    });
+  }, [params.id, searchParams.title, searchParams.imgUrl]);
 
   return (
     <div className="bg-green-50 min-h-screen w-full p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-green-800">
-            {searchParams.title}
+            {decodeData.title}
           </h1>
           <img
             className="w-40 h-40 object-cover rounded-lg"
-            src={searchParams.imgUrl}
-            alt={searchParams.title}
+            src={decodeData.imgUrl}
+            alt={decodeData.title}
           />
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {detail.map((item) => (
-            <Link href={`/recycle/${item.id}`} key={item.id}>
+            <Link
+              key={item.id}
+              href={{
+                pathname: `/recycle/detail/${item.id}`,
+                query: {
+                  context: encodeURIComponent(item.context),
+                  subcontext: encodeURIComponent(item.subcontext),
+                  title: encodeURIComponent(item.title),
+                  imgUrl: encodeURIComponent(item.imgUrl),
+                },
+              }}
+            >
               <div className="border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer">
                 <div className="flex justify-between items-start">
                   <div>

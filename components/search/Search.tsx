@@ -8,7 +8,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="찾으시는 제품을 입력해주세요."
-          className="w-[400px] h-10 pl-4 rounded-lg border-2 border-green-500"
+          className="w-[600px] h-12 pl-4 rounded-3xl border-2 border-green-500"
         />
         <button className="bg-green-400 rounded-md ml-2 w-[64px] h-10 text-white">
           검색
