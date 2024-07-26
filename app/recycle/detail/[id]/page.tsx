@@ -9,43 +9,54 @@ interface Params {
   };
 }
 
-interface DetailData {
+interface DetailProps {
+  id: number;
+  title: string;
+  type: { id: number; name: string };
+  imgUrl: string;
   context: string;
   subcontext: string;
-  title: string;
-  imgUrl: string;
 }
 
 const URL = "http://localhost:3001";
 
 export default function DetailPages({ params }: Params) {
-  const [detailData, setDetailData] = useState<DetailData[]>([]);
+  const [detail, setDetail] = useState<DetailProps | null>(null);
 
-  const getDetailData= async()=>{
-    try{
-      const res = await axios.get(`${URL}/disboard`)
-      setDetailData(res.data[params.id])
-    } catch((error)=>{
-      console.error(error)
-    })
-  }
+  const getDetailData = async () => {
+    try {
+      const res = await axios.get(`${URL}/disboard`);
+      const ID = parseInt(params.id) - 1;
+      if (res.data.all[ID]) {
+        setDetail(res.data.all[ID]);
+      } else {
+        console.error("Detail data not found for the given ID");
+      }
+    } catch (error) {
+      console.error("Error fetching detail data:", error);
+    }
+  };
 
   useEffect(() => {
     getDetailData();
-  }, []);
+  }, [params.id]);
+
+  if (!detail) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-100 to-green-200 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl w-full">
         <div className="relative h-64">
           <img
-            src={decodeData.imgUrl}
-            alt={decodeData.title}
+            src={detail.imgUrl}
+            alt={detail.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h1 className="text-4xl font-bold text-white text-center">
-              {decodeData.title}
+              {detail.title}
             </h1>
           </div>
         </div>
@@ -56,13 +67,13 @@ export default function DetailPages({ params }: Params) {
           <div className="space-y-4">
             <div className="flex items-center">
               <span className="text-green-600 font-medium w-24">분류:</span>
-              <span className="text-gray-700">{decodeData.context}</span>
+              <span className="text-gray-700">{detail.context}</span>
             </div>
             <div className="flex items-center">
               <span className="text-green-600 font-medium w-24">
                 세부 분류:
               </span>
-              <span className="text-gray-700">{decodeData.subcontext}</span>
+              <span className="text-gray-700">{detail.subcontext}</span>
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-gray-200">
