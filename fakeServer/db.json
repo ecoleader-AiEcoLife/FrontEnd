@@ -1,191 +1,208 @@
 {
-    "map":{"marker": [
-        {
-            "imgUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg/640px-%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg",
-            "lng" : 128.6105,
-            "location" : "대구광역시 북구 경대1",
-            "id" : 0,
-            "title" : "IT관",
-            "lat" : 35.8890
-          },
-          {
-            "imgUrl" : "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MDNfMTc3/MDAxNTk5MTQyNjAwMDMx.sfpOdLwOi_P8V69yMOgURkIYdiPCtwyZi84wtGKsmU0g.Tp1BDOyWWokwJ7o3_sQD2Ryb7dHc0vZzBk7Wyh1MnNQg.JPEG.daegu_news/SE-d0384482-6677-4f31-8eab-28b54817b67c.jpg?type=w800",
-            "lng" : 128.6110,
-            "location" : "대구광역시 북구 경대2",
-            "id" : 1,
-            "title" : "전자관",
-            "lat" : 35.8885
-          },
-          {
-            "imgUrl" : "https://cdn.news.unn.net/news/photo/202207/530795_335500_527.jpg",
-            "lng" : 128.6106,
-            "location" : "대구광역시 북구 경대3",
-            "id" : 2,
-            "title" : "첨성관",
-            "lat" : 35.8894
-          }
-        ]
-      },
+  "board": [
+    {
+      "id": 1,
+      "title": "안녕하세요 EDDY 팀입니다.",
+      "body": "재활용에 대한 여러가지 공지들을 올릴 예정입니다."
+    },
+    {
+      "id": "2",
+      "title": "경북대학교 내 위치한 재활용 쓰레기통 위치를 추가해보아요!",
+      "body": "상세 위치를 알려주세요!"
+    },
+    {
+      "id": "3",
+      "title": "메인 페이지에서 다양한 재활용품의 정보를 알 수 있어요.",
+      "body": "원하시는 재활용품의 정보를 얻어, 올바른 재활용 습관을 길러보아요."
+    }
+  ],
 
-    "disboard":{
-      "main":[
-        {
-          "id": "1",
-          "title": "종이류",
-          "imgUrl":
-            "https://cdn-cms.packative.com/wp-content/uploads/2023/05/31102336/%EC%A2%85%EC%9D%B4-3.jpg"
-        },
-        {
-          "id": "2",
-          "title": "금속류",
-          "imgUrl":
-            "https://www.thekmagazine.co.kr/data/theK_2206/images/sub/sub3/5/1.jpg"
-        },
-        {
-          "id": "3",
-          "title": "유리류",
-          "imgUrl":
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-zLO3zYo3BCshIKcRQ4KEkNWamv2Jhab0w&s"
-        },
-        {
-          "id": "4",
-          "title": "플라스틱류",
-          "imgUrl":
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTXGzB57tvM28s77Dga4hooEEmdKqajSsAKg&s"
-        },
-        {
-          "id": "5",
-          "title": "비닐류",
-          "imgUrl":
-            "https://www.consumerpost.co.kr/news/photo/201808/201448_101950_3659.png"
-        },
-        {
-          "id": "6",
-          "title": "의류",
-          "imgUrl":
-            "https://www.fashionnet.or.kr/wp-content/uploads/2022/11/kfashionnews-368.jpg"
-        }
-      ],
-
-      "list":{
-        "1":  [
+  "map": {
+    "marker": [
       {
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg/640px-%EA%B2%BD%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%B8%EA%B4%80%EC%82%AC%EC%A7%84.jpg",
+        "lng": 128.6105,
+        "location": "대구광역시 북구 경대1",
+        "id": 0,
+        "title": "IT관",
+        "lat": 35.889
+      },
+      {
+        "imgUrl": "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MDNfMTc3/MDAxNTk5MTQyNjAwMDMx.sfpOdLwOi_P8V69yMOgURkIYdiPCtwyZi84wtGKsmU0g.Tp1BDOyWWokwJ7o3_sQD2Ryb7dHc0vZzBk7Wyh1MnNQg.JPEG.daegu_news/SE-d0384482-6677-4f31-8eab-28b54817b67c.jpg?type=w800",
+        "lng": 128.611,
+        "location": "대구광역시 북구 경대2",
         "id": 1,
-        "title": "종이 상자",
-        "type": {
-          "id":1,
-          "name":"종이"},
-        "context": "테이프, 스테이플 등 이물질 제거 후 분리배출",
-        "subcontext": "오염된 종이는 재활용이 어려우므로 일반쓰레기로 배출",
-        "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg"
+        "title": "전자관",
+        "lat": 35.8885
       },
       {
-        "id": 4,
-        "title": "신문지",
-        "type": {
-          "id":1,
-          "name":"종이"},
-        "context": "물기에 젖지 않도록 하여 분리배출",
-        "subcontext": "광고지, 전단지 등과 함께 묶어서 배출 가능",
-        "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg"
-      },
-      {
-        "id": 7,
-        "title": "잡지",
-        "type": {
-          "id":1,
-          "name":"종이"},
-        "context": "스프링 등 금속 부분을 제거하고 분리배출",
-        "subcontext": "비닐 코팅된 표지는 제거 후 배출",
-        "imgUrl": "https://mir-s3-cdn-cf.behance.net/projects/404/155826166577093.Y3JvcCwyMDA4LDE1NzAsMCwyMTg.png"
-      },
-      {
-        "id": 8,
-        "title": "우유 팩",
-        "type": {
-          "id":1,
-          "name":"종이"},
-        "context": "내용물을 비우고 헹군 후 압착하여 분리배출",
-        "subcontext": "일반 종이와 분리하여 배출",
-        "imgUrl": "https://cdn.imweb.me/thumbnail/20220211/e3650b99c2dfb.png"
+        "imgUrl": "https://cdn.news.unn.net/news/photo/202207/530795_335500_527.jpg",
+        "lng": 128.6106,
+        "location": "대구광역시 북구 경대3",
+        "id": 2,
+        "title": "첨성관",
+        "lat": 35.8894
       }
+    ]
+  },
 
-    ],
-
-    "2":  [
+  "disboard": {
+    "main": [
       {
-        "id": 1,
-        "title": "알루미늄 캔",
-        "type": {
-          "id":2,
-          "name":"금속"},
-        "context": "내용물을 비우고 압착하여 분리배출",
-        "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
-        "imgUrl": "https://cdn.imweb.me/thumbnail/20211124/be34dd4f89cb9.jpg"
+        "id": "1",
+        "title": "종이류",
+        "imgUrl": "https://cdn-cms.packative.com/wp-content/uploads/2023/05/31102336/%EC%A2%85%EC%9D%B4-3.jpg"
       },
       {
-        "id": 6,
-        "title": "철 캔",
-        "type": {
-          "id":2,
-          "name":"금속"},
-        "context": "내용물을 비우고 가능한 압착하여 분리배출",
-        "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
-        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCfGUYUJff3caVdoxEFfuiCYfkn1fwHwTIw&s"
+        "id": "2",
+        "title": "금속류",
+        "imgUrl": "https://www.thekmagazine.co.kr/data/theK_2206/images/sub/sub3/5/1.jpg"
+      },
+      {
+        "id": "3",
+        "title": "유리류",
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-zLO3zYo3BCshIKcRQ4KEkNWamv2Jhab0w&s"
+      },
+      {
+        "id": "4",
+        "title": "플라스틱류",
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTXGzB57tvM28s77Dga4hooEEmdKqajSsAKg&s"
+      },
+      {
+        "id": "5",
+        "title": "비닐류",
+        "imgUrl": "https://www.consumerpost.co.kr/news/photo/201808/201448_101950_3659.png"
+      },
+      {
+        "id": "6",
+        "title": "의류",
+        "imgUrl": "https://www.fashionnet.or.kr/wp-content/uploads/2022/11/kfashionnews-368.jpg"
       }
     ],
     
-    "3":[
-      {
-        "id": 2,
-        "title": "유리병",
-        "type": {
-          "id":3,
-          "name":"플라스틱"},
-        "context": "내용물을 비우고 라벨 제거 후 분리배출",
-        "subcontext": "깨진 유리는 신문지에 싸서 일반쓰레기로 배출",
-        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiQMh90X7I5lRslSReaFY0RCvGU-jMPAnsA&s"
-      }
-    ],
-
-    "4":[
-      {
-        "id": 0,
-        "title": "플라스틱 병",
-        "type": {
-          "id":4,
-          "name":"플라스틱"},
-        "context": "내용물을 비우고 라벨 제거 후 분리배출",
-        "subcontext": "색깔이 있는 플라스틱 병은 재활용이 어려울 수 있음",
-        "imgUrl": "https://cafe24.poxo.com/ec01/thewonscience/HOvhRhvOk+Cp2KY4JuusAnMbsJTQKwcP09iwEpvKlfYdoCDITk50GxcBghzPiKu0AOCLzLcK4+Li+aTBuoOsjg==/_/web/product/big/202206/2c49e9ecc279d823869d00e90f60c11a.jpeg"
-      }
-    ],
-
-    "5":[
-     {
-        "id": 5,
-        "title": "비닐 봉지",
-        "type": {
-          "id":5,
-          "name":"비닐"},
-        "context": "이물질을 제거하고 동일한 재질끼리 모아서 배출",
-        "subcontext": "오염된 비닐은 일반쓰레기로 배출",
-        "imgUrl": "https://img.danawa.com/prod_img/500000/503/277/img/7277503_1.jpg?_v=20190219155054"
-      }
-    ],
-
-    "6":[
-      {
-        "id": 9,
-        "title": "옷",
-        "type": {
-          "id":6,
-          "name":"의류"},
-        "context": "의류 수거함에 배출 또는 재사용 가능한 경우 기부",
-        "subcontext": "오염되거나 훼손된 의류는 일반쓰레기로 배출",
-        "imgUrl": "https://image1.marpple.co/files/u_193535/2022/4/original/0abc4abf04a80b4e9109500a16c6b5f487f6172b1.png?q=92&w=1480&f=jpeg&bg=f6f6f6"
-      }
-    ]
-  }  
- }
+    "list": {
+      "1": [
+        {
+          "id": 1,
+          "title": "종이 상자",
+          "type": {
+            "id": 1,
+            "name": "종이"
+          },
+          "context": "테이프, 스테이플 등 이물질 제거 후 분리배출",
+          "subcontext": "오염된 종이는 재활용이 어려우므로 일반쓰레기로 배출",
+          "imgUrl": "https://soyutne.co.kr/data/goods/1/2019/06/149_tmp_9b5aa8917a08076db6c5a079961dae403908view.jpg"
+        },
+        {
+          "id": 4,
+          "title": "신문지",
+          "type": {
+            "id": 1,
+            "name": "종이"
+          },
+          "context": "물기에 젖지 않도록 하여 분리배출",
+          "subcontext": "광고지, 전단지 등과 함께 묶어서 배출 가능",
+          "imgUrl": "https://m.eoie.kr/web/product/big/201804/689_shop1_796357.jpg"
+        },
+        {
+          "id": 7,
+          "title": "잡지",
+          "type": {
+            "id": 1,
+            "name": "종이"
+          },
+          "context": "스프링 등 금속 부분을 제거하고 분리배출",
+          "subcontext": "비닐 코팅된 표지는 제거 후 배출",
+          "imgUrl": "https://mir-s3-cdn-cf.behance.net/projects/404/155826166577093.Y3JvcCwyMDA4LDE1NzAsMCwyMTg.png"
+        },
+        {
+          "id": 8,
+          "title": "우유 팩",
+          "type": {
+            "id": 1,
+            "name": "종이"
+          },
+          "context": "내용물을 비우고 헹군 후 압착하여 분리배출",
+          "subcontext": "일반 종이와 분리하여 배출",
+          "imgUrl": "https://cdn.imweb.me/thumbnail/20220211/e3650b99c2dfb.png"
+        }
+      ],
+      "2": [
+        {
+          "id": 1,
+          "title": "알루미늄 캔",
+          "type": {
+            "id": 2,
+            "name": "금속"
+          },
+          "context": "내용물을 비우고 압착하여 분리배출",
+          "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
+          "imgUrl": "https://cdn.imweb.me/thumbnail/20211124/be34dd4f89cb9.jpg"
+        },
+        {
+          "id": 6,
+          "title": "철 캔",
+          "type": {
+            "id": 2,
+            "name": "금속"
+          },
+          "context": "내용물을 비우고 가능한 압착하여 분리배출",
+          "subcontext": "플라스틱 뚜껑은 별도로 분리하여 배출",
+          "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCfGUYUJff3caVdoxEFfuiCYfkn1fwHwTIw&s"
+        }
+      ],
+      "3": [
+        {
+          "id": 2,
+          "title": "유리병",
+          "type": {
+            "id": 3,
+            "name": "플라스틱"
+          },
+          "context": "내용물을 비우고 라벨 제거 후 분리배출",
+          "subcontext": "깨진 유리는 신문지에 싸서 일반쓰레기로 배출",
+          "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiQMh90X7I5lRslSReaFY0RCvGU-jMPAnsA&s"
+        }
+      ],
+      "4": [
+        {
+          "id": 0,
+          "title": "플라스틱 병",
+          "type": {
+            "id": 4,
+            "name": "플라스틱"
+          },
+          "context": "내용물을 비우고 라벨 제거 후 분리배출",
+          "subcontext": "색깔이 있는 플라스틱 병은 재활용이 어려울 수 있음",
+          "imgUrl": "https://cafe24.poxo.com/ec01/thewonscience/HOvhRhvOk+Cp2KY4JuusAnMbsJTQKwcP09iwEpvKlfYdoCDITk50GxcBghzPiKu0AOCLzLcK4+Li+aTBuoOsjg==/_/web/product/big/202206/2c49e9ecc279d823869d00e90f60c11a.jpeg"
+        }
+      ],
+      "5": [
+        {
+          "id": 5,
+          "title": "비닐 봉지",
+          "type": {
+            "id": 5,
+            "name": "비닐"
+          },
+          "context": "이물질을 제거하고 동일한 재질끼리 모아서 배출",
+          "subcontext": "오염된 비닐은 일반쓰레기로 배출",
+          "imgUrl": "https://img.danawa.com/prod_img/500000/503/277/img/7277503_1.jpg?_v=20190219155054"
+        }
+      ],
+      "6": [
+        {
+          "id": 9,
+          "title": "옷",
+          "type": {
+            "id": 6,
+            "name": "의류"
+          },
+          "context": "의류 수거함에 배출 또는 재사용 가능한 경우 기부",
+          "subcontext": "오염되거나 훼손된 의류는 일반쓰레기로 배출",
+          "imgUrl": "https://image1.marpple.co/files/u_193535/2022/4/original/0abc4abf04a80b4e9109500a16c6b5f487f6172b1.png?q=92&w=1480&f=jpeg&bg=f6f6f6"
+        }
+      ]
+    }
+  }
 }

@@ -1,41 +1,38 @@
 "use client";
 
+import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface SearchParams {
+interface Params {
+  params: {
+    id: string;
+  };
+}
+
+interface DetailData {
   context: string;
   subcontext: string;
   title: string;
   imgUrl: string;
 }
 
-interface DecodeData {
-  context: string;
-  subcontext: string;
-  title: string;
-  imgUrl: string;
-}
+const URL = "http://localhost:3001";
 
-export default function DetailPages({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const [decodeData, setDecodeData] = useState<DecodeData>({
-    context: "",
-    subcontext: "",
-    title: "",
-    imgUrl: "",
-  });
+export default function DetailPages({ params }: Params) {
+  const [detailData, setDetailData] = useState<DetailData[]>([]);
+
+  const getDetailData= async()=>{
+    try{
+      const res = await axios.get(`${URL}/disboard`)
+      setDetailData(res.data[params.id])
+    } catch((error)=>{
+      console.error(error)
+    })
+  }
 
   useEffect(() => {
-    setDecodeData({
-      context: decodeURIComponent(searchParams.context || ""),
-      subcontext: decodeURIComponent(searchParams.subcontext || ""),
-      title: decodeURIComponent(searchParams.title || ""),
-      imgUrl: decodeURIComponent(searchParams.imgUrl || ""),
-    });
-  }, [searchParams]);
+    getDetailData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-100 to-green-200 flex items-center justify-center p-4">

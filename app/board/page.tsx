@@ -37,7 +37,7 @@ export default function Board() {
       const newTitle = "새로운 Title";
       const newBody = "새로운 Body";
 
-      await axios.post("http://localhost:3001/memo", {
+      await axios.post("http://localhost:3001/board", {
         id: newId,
         title: newTitle,
         body: newBody,

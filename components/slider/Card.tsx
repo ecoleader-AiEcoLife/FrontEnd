@@ -8,15 +8,7 @@ interface RecycleProps {
 
 export default function Card({ id, title, imgUrl }: RecycleProps) {
   return (
-    <Link
-      href={{
-        pathname: `/recycle/${id}`,
-        query: {
-          title: encodeURIComponent(title),
-          imgUrl: encodeURIComponent(imgUrl),
-        },
-      }}
-    >
+    <Link href={`/recycle/${id}`}>
       <div className="w-full h-full bg-white border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-gray-400">
         <div className="flex flex-col h-full">
           <div className="flex justify-center font-bold">

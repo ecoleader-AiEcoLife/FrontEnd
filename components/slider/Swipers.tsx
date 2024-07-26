@@ -13,7 +13,6 @@ interface recycleProps {
   title: string;
   imgUrl: string;
 }
-
 const URL = "http://localhost:3001";
 
 export default function Swipers() {
