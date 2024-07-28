@@ -64,7 +64,7 @@ export default function Search() {
         </button>
       </div>
       <div className="mt-4">
-        {filteredData.length > 0 ? (
+        {filteredData.length > 0 &&
           filteredData.map((item) => (
             <div
               key={item.id}
@@ -87,12 +87,7 @@ export default function Search() {
                 <strong>주의사항:</strong> {item.subcontext}
               </p>
             </div>
-          ))
-        ) : searchItem ? (
-          <p>검색 결과가 없습니다.</p>
-        ) : (
-          <p>검색어를 입력하고 검색 버튼을 눌러주세요.</p>
-        )}
+          ))}
       </div>
     </div>
   );
