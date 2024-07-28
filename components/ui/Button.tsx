@@ -6,7 +6,7 @@ interface ButtonProps {
 
 const Button = ({ value }: ButtonProps) => {
   return (
-    <button className="h-12 rounded-lg bg-white font-bold px-5 hover:bg-emerald-200">
+    <button className="h-12 rounded-lg bg-white text-black font-bold px-5 hover:bg-emerald-200">
       {value}
     </button>
   );
