@@ -39,6 +39,12 @@ export default function Search() {
     router.push(`/recycle/detail/${id}`);
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   useEffect(() => {
     getAllData();
   }, []);
@@ -55,6 +61,7 @@ export default function Search() {
           className="w-[600px] h-12 pl-4 rounded-3xl border-2 border-green-500"
           value={searchItem}
           onChange={(e) => setSearchItem(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
         <button
           className="bg-green-400 rounded-md ml-2 w-[64px] h-10 text-white"
@@ -64,7 +71,7 @@ export default function Search() {
         </button>
       </div>
       <div className="mt-4">
-        {filteredData.length > 0 &&
+        {filteredData.length > 0 ? (
           filteredData.map((item) => (
             <div
               key={item.id}
@@ -87,7 +94,10 @@ export default function Search() {
                 <strong>주의사항:</strong> {item.subcontext}
               </p>
             </div>
-          ))}
+          ))
+        ) : (
+          <p>해당되는 재활용품 정보가 없습니다.</p>
+        )}
       </div>
     </div>
   );
