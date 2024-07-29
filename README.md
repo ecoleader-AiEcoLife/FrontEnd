@@ -1,5 +1,6 @@
 - **재활용품 홈페이지**  <br/>
-백엔드 (Flamework: Spring) 과 협업한 재활용 웹사이트 팀 프로젝트
+대구 지방청과 협업을 맺어 재활용 웹사이트 팀 프로젝트 (백엔드, AI 협업)
+
 
 <br/>
 
@@ -7,6 +8,7 @@
 1) Next.js <br/>
 - Typescript <br/>
 - CSS - tailwind <br/>
+- json server <br/>
 
 <br/><br/>
 
@@ -16,21 +18,21 @@
    - 슬라이딩(Swiper) , Dynamic Routes , Restful API
   
 2) 상세한 제품 검색 기능
-   - filter함수
+   - Restful API, filter함수
 
 4) 게시판 기능
-   - Restful API - axios
+   - Restful API - axios (GET, POST)
 
 5) 재활용 쓰레기통 지도
-   - Restful API , 카카오 라이브러리 이용
+   - Restful API , 카카오 라이브러리, 지도 API 이용
 6) 인공지능 AI GPT
    - API
 
 <br/><br/>
 
 < 추가해야 할 기능 >
-1) 메모 기능
-2) 게시판 추가,삭제 기능 추가
+1) To-Do list?
+2) 회원가입
 3) Chat GPT
 4) 장바구니
 
