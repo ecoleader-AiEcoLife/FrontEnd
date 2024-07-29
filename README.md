@@ -79,7 +79,8 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
 -> 매번 page 마다 rest api 호출
 
   <br/>
-4. <view 조회수 아직 실패>   <br/>
+  
+4. view 조회수 아직 실패   <br/>
 fake server 의 db.json 에서 board 의 data들이 리스트 형태로 되있어서 patch를 시도해보았지만 객체들의 리스트에서 특정한 객체의 id를 비교해서 조회수(view)를 바꾸는것이 불가하여
 patch가 아닌 put의 rest API를 통해 전체 data를 바꿈
 
