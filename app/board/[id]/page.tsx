@@ -9,7 +9,6 @@ interface BoardProps {
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface Params {

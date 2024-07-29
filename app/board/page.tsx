@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -82,9 +83,12 @@ const Board = () => {
         </table>
       </div>
       <div className="mt-6 flex justify-end">
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        <Link
+          href={"/board/newboard"}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
           글쓰기
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface ItemProps {
@@ -17,6 +18,8 @@ export default function Newboard() {
   const [newBody, setNewBody] = useState<string>("");
 
   const today = new Date();
+
+  const router = useRouter();
 
   const getBoardList = async () => {
     try {
@@ -38,15 +41,16 @@ export default function Newboard() {
         id: newId,
         title: newTitle,
         body: newBody,
-        data: `${today.getFullYear()}년 ${
+        date: `${today.getFullYear()}년 ${
           today.getMonth() + 1
         }월 ${today.getDate()}일`,
-        view: "0",
       });
 
       alert("게시글이 성공적으로 추가되었습니다.");
       setNewTitle("");
       setNewBody("");
+
+      router.push("/board");
     } catch (error) {
       console.error("데이터 Post 실패:", error);
       alert("게시판 추가 실패 (Post)");
@@ -56,7 +60,7 @@ export default function Newboard() {
   return (
     <div className="flex justify-center items-center min-h-screen mx-auto">
       <div className="bg-emerald-200 p-8 rounded-lg shadow-lg w-full max-w-2xl">
-        <h1 className="text-center bg-green-300 rounded-md my-4 py-2 text-xl font-bold">
+        <h1 className="text-center bg-green-400 rounded-md my-4 py-2 text-xl font-bold">
           새 게시글 작성
         </h1>
         <form
