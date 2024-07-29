@@ -46,7 +46,7 @@
 1) 마커 isVisible  status가 한 컴포넌트에서 setStatus()를 통해 전체 마커한테 적용되서 
 모든 마커가 적용이됌
 -> status 컴포넌트를 따로 만들어서 하나의 마커에게만 적용하게 함
-
+  <br/>
 2) 네이버 뉴스 API -> CORS 에러
 
 <br/>
@@ -62,7 +62,7 @@ CORS는 웹 어플리케이션이 다른 출처에 자원에 접근할 수 있�
 app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 실행되는 API 엔드포인트로 취급 (이 파일 내의 코드는 클라이언트의 JavaScript 번들에 포함되지 않고, 오직 서버에서만 실행됌)
 -> 이 파일 내에서 정의된 함수(GET, POST 등)는 해당 HTTP 메서드의 요청을 처리합니다. 서버에서 API를 호출하므로 브라우저의 동일 출처 정책을 우회할 수 있습니다.
 
-
+  <br/>
 3) 슬라이더 통해서 동적 페이지 매번 이동 -> props drilling 문제 발
    <br/>
    (params, searchParams) 이용
@@ -74,7 +74,7 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
   <br/>
 -> 매번 page 마다 rest api 호출
 
-
+  <br/>
 4) <view 조회수 아직 실패>   <br/>
 fake server 의 db.json 에서 board 의 data들이 리스트 형태로 되있어서 patch를 시도해보았지만 객체들의 리스트에서 특정한 객체의 id를 비교해서 조회수(view)를 바꾸는것이 불가하여
 patch가 아닌 put의 rest API를 통해 전체 data를 바꿈
