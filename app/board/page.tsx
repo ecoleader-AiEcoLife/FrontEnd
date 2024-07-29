@@ -1,69 +1,93 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-import Newboard from "./newboard/page";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-interface ItemProps {
-  id: number;
+interface boardProps {
+  id: string;
   title: string;
   body: string;
+  date: string;
 }
 
 const URL = "http://localhost:3001";
 
-export default function Board() {
-  const [board, setBoard] = useState<ItemProps[]>([]);
-  const [openItemId, setOpenItemId] = useState<number | null>(null);
+const Board = () => {
+  const [board, setBoard] = useState<boardProps[]>([]);
 
-  const getBoardList = async () => {
+  const router = useRouter();
+
+  const getBoard = async () => {
     try {
-      const res = await axios.get<ItemProps[]>(`${URL}/board`);
+      const res = await axios.get<boardProps[]>(`${URL}/board`);
       setBoard(res.data);
     } catch (error) {
-      console.error("데이터 실패:", error);
+      console.log("데이터 get 실패", error);
     }
   };
 
-  useEffect(() => {
-    getBoardList();
-  }, []);
-
-  const toggleItem = (id: number) => {
-    setOpenItemId(openItemId === id ? null : id);
+  const handleClick = async (id: string) => {
+    router.push(`http://localhost:3000/board/${id}`);
   };
 
+  useEffect(() => {
+    getBoard();
+  }, []);
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6 text-center">
-        재활용 정보 게시판
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
+        정보 게시판
       </h1>
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        {board.map((item: ItemProps) => (
-          <div key={item.id} className="border-b border-gray-200">
-            <button
-              onClick={() => toggleItem(item.id)}
-              className="flex justify-between items-center w-full p-4 text-left hover:bg-gray-50"
-            >
-              <span className="font-medium">
-                {item.id}. {item.title}
-              </span>
-              {openItemId === item.id ? (
-                <ChevronUpIcon className="h-5 w-5 text-gray-500" />
-              ) : (
-                <ChevronDownIcon className="h-5 w-5 text-gray-500" />
-              )}
-            </button>
-            {openItemId === item.id && (
-              <div className="px-4 py-3 bg-gray-50">
-                <p className="text-gray-700">{item.body}</p>
-              </div>
-            )}
-          </div>
-        ))}
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-green-300">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                번호
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                제목
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                작성자
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                작성일
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {board.map((item) => (
+              <tr key={item.id} className="hover:bg-gray-50">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {item.id}
+                </td>
+                <td
+                  className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:underline cursor-pointer"
+                  onClick={() => handleClick(item.id)}
+                >
+                  {item.title}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {item.body}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {item.date}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <Newboard board={board} />
+      <div className="mt-6 flex justify-end">
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          글쓰기
+        </button>
+      </div>
     </div>
   );
-}
+};
+
+export default Board;
