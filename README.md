@@ -8,7 +8,8 @@
 1) Next.js <br/>
 - Typescript <br/>
 - CSS - tailwind <br/>
-- json server <br/>
+
+2) json server <br/>
 
 <br/><br/>
 
