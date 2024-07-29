@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import Newboard from "./newboard/page";
 
 interface ItemProps {
   id: number;
@@ -10,13 +11,15 @@ interface ItemProps {
   body: string;
 }
 
+const URL = "http://localhost:3001";
+
 export default function Board() {
   const [board, setBoard] = useState<ItemProps[]>([]);
   const [openItemId, setOpenItemId] = useState<number | null>(null);
 
   const getBoardList = async () => {
     try {
-      const res = await axios.get<ItemProps[]>("http://localhost:3001/board");
+      const res = await axios.get<ItemProps[]>(`${URL}/board`);
       setBoard(res.data);
     } catch (error) {
       console.error("데이터 실패:", error);
@@ -29,23 +32,6 @@ export default function Board() {
 
   const toggleItem = (id: number) => {
     setOpenItemId(openItemId === id ? null : id);
-  };
-
-  const handlePost = async () => {
-    try {
-      const newId = (board.length + 1).toString();
-      const newTitle = "새로운 Title";
-      const newBody = "새로운 Body";
-
-      await axios.post("http://localhost:3001/board", {
-        id: newId,
-        title: newTitle,
-        body: newBody,
-      });
-    } catch (error) {
-      console.log("데이터 Post 실패:", error);
-      alert("게시판 추가 실패 Post)");
-    }
   };
 
   return (
@@ -77,14 +63,7 @@ export default function Board() {
           </div>
         ))}
       </div>
-      <div className="flex justify-end">
-        <button
-          onClick={handlePost}
-          className="bg-green-500 text-white rounded-md mt-4 p-1"
-        >
-          글쓰기
-        </button>
-      </div>
+      <Newboard board={board} />
     </div>
   );
 }
