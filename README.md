@@ -44,13 +44,13 @@
 <고난>
 <br/>
 
-1) 마커 isVisible  status가 한 컴포넌트에서 setStatus()를 통해 전체 마커한테 적용되서 
+1. 마커 isVisible  status가 한 컴포넌트에서 setStatus()를 통해 전체 마커한테 적용되서 
 모든 마커가 적용이됌
 -> status 컴포넌트를 따로 만들어서 하나의 마커에게만 적용하게 함
    
 <br/>
 
-2) 네이버 뉴스 API -> CORS 에러
+2. 네이버 뉴스 API -> CORS 에러
 
 <br/>
 SOP(동일 출처 정책)
@@ -67,7 +67,7 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
  
 <br/><br/>
 
-3) 슬라이더 통해서 동적 페이지 매번 이동 -> props drilling 문제 발생
+3. 슬라이더 통해서 동적 페이지 매번 이동 -> props drilling 문제 발생
    <br/>
    (params, searchParams) 이용
      <br/>
@@ -79,7 +79,7 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
 -> 매번 page 마다 rest api 호출
 
   <br/>
-4) <view 조회수 아직 실패>   <br/>
+4. <view 조회수 아직 실패>   <br/>
 fake server 의 db.json 에서 board 의 data들이 리스트 형태로 되있어서 patch를 시도해보았지만 객체들의 리스트에서 특정한 객체의 id를 비교해서 조회수(view)를 바꾸는것이 불가하여
 patch가 아닌 put의 rest API를 통해 전체 data를 바꿈
 
