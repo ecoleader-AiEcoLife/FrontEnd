@@ -21,7 +21,7 @@
 2) 상세한 제품 검색 기능
    - Restful API, filter함수
 
-4) 공지 게시판 기능 - 추가, 삭제
+4) 공지(자유) 게시판 기능 - 추가, 삭제
    - Restful API - axios (GET, POST)
 
 5) 재활용 쓰레기통 지도
