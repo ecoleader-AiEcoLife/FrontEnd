@@ -3,6 +3,15 @@
 <br/>
 Frontend (Full-Stack)
 <br/>
+<br/>
+
+<NextJS를 선택한 이유> <br/>
+- "개인이 풀스택 개발을 하기에 최적화 된 웹 프레임워크"
+- 서버사이 렌더링 (서버에서 HTML을 최적화해서 웹으로 내려줌 -> SEO(검색엔진) 최적화)
+- (동적)라우팅 편리함
+
+
+<br/>
 
 **Framework** <br/>
 1) Next.js <br/>
