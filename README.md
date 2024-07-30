@@ -21,16 +21,16 @@
 2) 상세한 제품 검색 기능
    - Restful API, filter함수
 
-4) 게시판 기능
+4) 공지 게시판 기능 - 추가, 삭제
    - Restful API - axios (GET, POST)
 
 5) 재활용 쓰레기통 지도
    - Restful API , 카카오 라이브러리, 지도 API 이용
 6) 인공지능 AI GPT
-   - API
+   - 진행중..
 
 7) 회원가입 - JWT (Jason Web Token)
-   -  하는중..
+   - 진행중..
 <br/><br/>
 
 < 추가해야 할 기능 >
