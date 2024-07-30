@@ -1,7 +1,7 @@
 - **재활용품 홈페이지**  <br/>
 대구 지방청과 협업을 맺어 재활용 웹사이트 팀 프로젝트 (백엔드, AI 협업)
-
-
+<br/>
+Frontend (Full-Stack)
 <br/>
 
 **Framework** <br/>
@@ -10,6 +10,7 @@
 - CSS - tailwind <br/>
 
 2) json server <br/>
+-> supabase로 이동 예정
 
 <br/><br/>
 
@@ -26,6 +27,7 @@
 
 5) 재활용 쓰레기통 지도
    - Restful API , 카카오 라이브러리, 지도 API 이용
+     
 6) 인공지능 AI GPT
    - 진행중..
 
