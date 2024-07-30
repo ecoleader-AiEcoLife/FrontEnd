@@ -29,6 +29,8 @@
 6) 인공지능 AI GPT
    - API
 
+7) 회원가입 - JWT (Jason Web Token)
+   - 
 <br/><br/>
 
 < 추가해야 할 기능 >
