@@ -11,11 +11,13 @@
   "dependencies": {
     "@heroicons/react": "^2.1.4",
     "axios": "^1.7.2",
+    "framer-motion": "^11.3.19",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-kakao-maps-sdk": "^1.1.27",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -28,6 +30,4 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
-
-
 }
