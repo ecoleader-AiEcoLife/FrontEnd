@@ -30,7 +30,7 @@
    - API
 
 7) 회원가입 - JWT (Jason Web Token)
-   - 
+   -  하는중..
 <br/><br/>
 
 < 추가해야 할 기능 >
