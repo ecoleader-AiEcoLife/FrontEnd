@@ -14,8 +14,13 @@ export default function Page() {
           <Search />
           <Swipers />
         </div>
-        <AddTodoForm />
-        <ToDoList />
+        <div className="max-w-3xl mx-auto bg-green-200 bg-opacity-60 shadow-lg rounded-lg mt-10">
+          <h1 className="text-center font-bold text-[20px]">
+            재활용품 장바구니
+          </h1>
+          <AddTodoForm />
+          <ToDoList />
+        </div>
       </div>
 
       <News />
