@@ -12,6 +12,8 @@ Frontend (Full-Stack)
 2) json server <br/>
 -> supabase로 이동 예정
 
+3) 상태관리 라이브러리 - Zustand
+
 <br/><br/>
 
 <구현>
@@ -33,6 +35,9 @@ Frontend (Full-Stack)
 
 7) 회원가입 - JWT (Jason Web Token)
    - 진행중..
+  
+8) To-Do List
+   - Zustand 상태관리 라이브러리 사용
 <br/><br/>
 
 < 추가해야 할 기능 >
