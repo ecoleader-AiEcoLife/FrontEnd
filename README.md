@@ -19,7 +19,7 @@ Frontend (Full-Stack)
 - CSS - tailwind <br/>
 
 2) json server <br/>
--> supabase로 이동 예정
+-> mongoDB 로 다룰 예정
 
 3) 상태관리 라이브러리 - Zustand
 
