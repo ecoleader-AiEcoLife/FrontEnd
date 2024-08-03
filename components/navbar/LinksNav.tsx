@@ -56,7 +56,7 @@ export default function LinksNav() {
           </Link>
         </div>
         <Link
-          href="login"
+          href="/login"
           className="bg-green-400 p-1 rounded-lg font-semibold text-white"
         >
           Sign In
