@@ -4,7 +4,7 @@ import News from "@/components/news/News";
 import Search from "@/components/search/Search";
 import Swipers from "@/components/slider/Swipers";
 import AddTodoForm from "@/components/todo/AddTodoForm";
-import ToDoList from "@/components/todo/ToDoList";
+import TodoList from "@/components/todo/TodoList";
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
             재활용품 장바구니
           </h1>
           <AddTodoForm />
-          <ToDoList />
+          <TodoList />
         </div>
       </div>
 

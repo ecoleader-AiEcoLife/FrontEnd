@@ -19,14 +19,14 @@ export default function AddTodoForm() {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Add a new todo"
+          placeholder="검색하고 싶은 재활용품을 담아보세요."
           className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
         />
         <button
           type="submit"
           className="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
         >
-          Add Todo
+          담기
         </button>
       </div>
     </form>

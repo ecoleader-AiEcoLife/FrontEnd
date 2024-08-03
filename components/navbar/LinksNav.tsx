@@ -55,8 +55,12 @@ export default function LinksNav() {
             </span>
           </Link>
         </div>
-        <Button value="Sign in" />
-
+        <Link
+          href="login"
+          className="bg-green-400 p-1 rounded-lg font-semibold text-white"
+        >
+          Sign In
+        </Link>
         <img
           className="bg-green-850 size-8 block lg:hidden cursor-pointer ml-4 hover:bg-emerald-500 rounded-md"
           src="/toggle.svg"
