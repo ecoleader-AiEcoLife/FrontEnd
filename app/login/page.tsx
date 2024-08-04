@@ -1,6 +1,8 @@
 "use client";
 
+import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -8,10 +10,24 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const router = useRouter();
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res?.error) {
+        setError("Invalid Credentials");
+        return;
+      }
+
+      router.replace("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -33,6 +49,7 @@ export default function LoginPage() {
             className="border border-blue-300 pl-2 p-1 rounded-md px-10"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="current-email"
           />
           <input
             type="password"
@@ -40,11 +57,16 @@ export default function LoginPage() {
             className="border border-blue-300 pl-2 p-1 rounded-md px-10"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
           />
           <button className="bg-green-400 rounded-md mt-4 p-1 text-white font-semibold">
             로그인
           </button>
-          {error && <div>{error}</div>}
+          {error && (
+            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
+              {error}
+            </div>
+          )}
 
           <div className="flex justify-between">
             <p className="text-blue-500 text-[13px]">계정이 없으신가요?</p>

@@ -1,15 +1,23 @@
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import Button from "../ui/Button";
 import { useState } from "react";
 
 export default function LinksNav() {
   const [copy, setCopy] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { data: session } = useSession();
+
   const handleCopy = () => {
-    navigator.clipboard.writeText("eunwoo1341@gmail.com");
+    navigator.clipboard.writeText("euAuthnwoo1341@gmail.com");
     setCopy("이메일이 복사되었습니다.");
     setTimeout(() => setCopy(""), 2000);
+  };
+
+  const handleAuthAction = () => {
+    if (session) {
+      signOut({ callbackUrl: "/" });
+    }
   };
 
   return (
@@ -55,12 +63,21 @@ export default function LinksNav() {
             </span>
           </Link>
         </div>
-        <Link
-          href="/login"
-          className="bg-green-400 p-1 rounded-lg font-semibold text-white"
-        >
-          Sign In
-        </Link>
+        {session ? (
+          <button
+            onClick={handleAuthAction}
+            className="bg-red-400 p-1 rounded-lg font-semibold text-white"
+          >
+            Sign Out
+          </button>
+        ) : (
+          <Link
+            href="/login"
+            className="bg-green-400 p-1 rounded-lg font-semibold text-white"
+          >
+            Sign In
+          </Link>
+        )}
         <img
           className="bg-green-850 size-8 block lg:hidden cursor-pointer ml-4 hover:bg-emerald-500 rounded-md"
           src="/toggle.svg"
