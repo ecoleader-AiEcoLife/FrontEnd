@@ -1,5 +1,6 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LinksNav() {
@@ -7,6 +8,8 @@ export default function LinksNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { data: session } = useSession();
+
+  const router = useRouter();
 
   const handleCopy = () => {
     navigator.clipboard.writeText("euAuthnwoo1341@gmail.com");
@@ -17,6 +20,13 @@ export default function LinksNav() {
   const handleAuthAction = () => {
     if (session) {
       signOut({ callbackUrl: "/" });
+    }
+  };
+
+  const handleSessionProtect = () => {
+    if (!session) {
+      alert("로그인 이후 이용해주세요.");
+      router.push("/login");
     }
   };
 
@@ -53,12 +63,18 @@ export default function LinksNav() {
             </span>
           </Link>
           <Link href="/chatbot">
-            <span className="text-white font-semibold hover:text-emerald-200">
+            <span
+              className="text-white font-semibold hover:text-emerald-200"
+              onClick={handleSessionProtect}
+            >
               재활용 챗봇
             </span>
           </Link>
           <Link href="/map">
-            <span className="text-white font-semibold hover:text-emerald-200">
+            <span
+              className="text-white font-semibold hover:text-emerald-200"
+              onClick={handleSessionProtect}
+            >
               재활용 지도
             </span>
           </Link>
@@ -91,18 +107,21 @@ export default function LinksNav() {
           <Link
             href="/board"
             className="block py-2 text-white hover:text-emerald-200"
+            onClick={handleSessionProtect}
           >
             정보게시판
           </Link>
           <Link
             href="/chatbot"
             className="block py-2 text-white hover:text-emerald-200"
+            onClick={handleSessionProtect}
           >
             재활용 챗봇
           </Link>
           <Link
             href="/map"
             className="block py-2 text-white hover:text-emerald-200"
+            onClick={handleSessionProtect}
           >
             재활용 지도
           </Link>

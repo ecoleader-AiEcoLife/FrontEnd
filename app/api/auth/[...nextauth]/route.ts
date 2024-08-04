@@ -1,9 +1,10 @@
 import { connectMongoDB } from "@/lib/mongodb";
 import User from "@/models/user";
-import { SessionStrategy } from "next-auth";
+import { Session, SessionStrategy } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs"
+import { JWT } from "next-auth/jwt";
 
 export const authOptions = {
     providers:[
@@ -25,12 +26,13 @@ export const authOptions = {
                     const user = await User.findOne({email})
 
                     if(!user){
-                        return null
+                        throw new Error("No user found");
                     }
 
                     const passwordsMatch = await bcrypt.compare(password, user.password)
                     if(!passwordsMatch){
-                        return null
+                        throw new Error("Incorrect password");
+
                     }
 
                     return user
@@ -42,14 +44,28 @@ export const authOptions = {
         })
     ],
 
-    session:{
-        strategy: "jwt" as SessionStrategy
-    },
 
-    secret: process.env.NEXTAUTH_SECRET,
-    pages:{
-        signIn:"/"
-    }
+    callbacks: {
+        async jwt({ token, user }: { token: JWT; user?: any }) {
+          if (user) {
+            token.name = user.name;
+            token.email = user.email;
+          }
+          return token;
+        },
+        async session({ session, token }: { session: Session; token: JWT }) {
+          if (token && session.user) {
+            session.user.name = token.name as string;
+            session.user.email = token.email as string;
+          }
+          return session;
+        }
+      },
+    
+      secret: process.env.NEXTAUTH_SECRET,
+      pages: {
+        signIn: "/login"
+      }
 }
 
 const handler = NextAuth(authOptions)
