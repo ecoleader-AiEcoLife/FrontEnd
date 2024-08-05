@@ -133,21 +133,20 @@ export default function LinksNav() {
           <Link
             href="/board"
             className="block py-2 text-white hover:text-emerald-200"
-            onClick={handleSessionProtect}
           >
             정보게시판
           </Link>
           <Link
             href="/chatbot"
             className="block py-2 text-white hover:text-emerald-200"
-            onClick={handleSessionProtect}
+            onClick={handleSessionProtect("/chatbot")}
           >
             재활용 챗봇
           </Link>
           <Link
             href="/map"
             className="block py-2 text-white hover:text-emerald-200"
-            onClick={handleSessionProtect}
+            onClick={handleSessionProtect("/map")}
           >
             재활용 지도
           </Link>
