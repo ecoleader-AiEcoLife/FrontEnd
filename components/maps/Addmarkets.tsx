@@ -17,7 +17,7 @@ export default function Addmarkers() {
 
   const getPositions = async () => {
     try {
-      const response = await axios.get<PositionProps[]>(`${URL}/map`);
+      const response = await axios.get(`${URL}/map`);
       setPositions(response.data.marker);
     } catch (error) {
       console.error(error);
