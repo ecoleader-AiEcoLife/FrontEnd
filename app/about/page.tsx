@@ -7,11 +7,10 @@ export default function About() {
           <span className="font-bold">Eddy </span>
           <span>입니다. </span>
         </div>
-        <div className="font-bold">
-          {" "}
-          프론트엔드(+풀스택) : 은우 , 백엔드 : 재민
-        </div>
-        <div className="font-bold"> AI : 정주 , 카드뉴스 : 준호</div>
+        <div className="font-bold"> 프론트엔드(+풀스택) : 은우</div>{" "}
+        <div className="font-bold"> 백엔드 : 재민</div>
+        <div className="font-bold"> AI : 정주</div>
+        <div className="font-bold"> 카드뉴스 : 준호</div>
       </div>
     </div>
   );
