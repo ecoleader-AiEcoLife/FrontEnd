@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 export default function LinksNav() {
   const [copy, setCopy] = useState<string>("");
@@ -33,18 +33,19 @@ export default function LinksNav() {
     }
   };
 
-  const handleSessionProtect = (path: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (status === "loading") {
-      return; // 로딩 중에는 아무 작업도 하지 않음
-    }
-    if (!isAuthenticated) {
-      alert("로그인 이후 이용해주세요.");
-      router.push("/login");
-    } else {
-      router.push(path);
-    }
-  };
+  const handleSessionProtect =
+    (path: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      if (status === "loading") {
+        return; // 로딩 중에는 아무 작업도 하지 않음
+      }
+      if (!isAuthenticated) {
+        alert("로그인 이후 이용해주세요.");
+        router.push("/login");
+      } else {
+        router.push(path);
+      }
+    };
 
   useEffect(() => {
     if (status === "authenticated") {
