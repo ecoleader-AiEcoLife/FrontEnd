@@ -5,19 +5,12 @@ import { useRouter } from "next/navigation";
 import { MouseEvent, useEffect, useState } from "react";
 
 export default function LinksNav() {
-  const [copy, setCopy] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { data: session, status } = useSession();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const router = useRouter();
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("euAuthnwoo1341@gmail.com");
-    setCopy("이메일이 복사되었습니다.");
-    setTimeout(() => setCopy(""), 2000);
-  };
 
   const handleAuthAction = () => {
     if (status === "loading") {
@@ -48,71 +41,51 @@ export default function LinksNav() {
   }, [status]);
 
   return (
-    <div className="relative flex justify-between items-center p-4">
-      <ul className="flex gap-8 mr-10 text-white">
-        <li>
-          <Link href="/">
-            <p>Home</p>
-          </Link>
-        </li>
-        <li className="hover:text-emerald-200">
-          <Link href="/about">
-            <p>About Us</p>
-          </Link>
-        </li>
-        <li className="hover:text-emerald-200">
-          <button onClick={handleCopy}>
-            <p>Contacts</p>
-          </button>
-          {copy && (
-            <span className="absolute -translate-x-1/2 top-full mt-2 px-2 py-1 bg-white text-emerald-800 text-sm rounded shadow whitespace-nowrap">
-              {copy}
-            </span>
-          )}
-        </li>
-      </ul>
+    <div className="flex items-center justify-end w-full">
+      <div className="hidden lg:flex items-center space-x-6">
+        <Link href="/about">
+          <span className="text-white font-semibold hover:text-emerald-200">
+            About us
+          </span>
+        </Link>
+        <Link href="/board">
+          <span className="text-white font-semibold hover:text-emerald-200">
+            정보게시판
+          </span>
+        </Link>
+        <Link href="/chatbot" onClick={handleSessionCheck}>
+          <span className="text-white font-semibold hover:text-emerald-200">
+            재활용 챗봇
+          </span>
+        </Link>
+        <Link href="/map" onClick={handleSessionCheck}>
+          <span className="text-white font-semibold hover:text-emerald-200">
+            재활용 지도
+          </span>
+        </Link>
+      </div>
 
-      <div className="flex items-center ml-8">
-        <div className="hidden lg:flex gap-8 mr-12">
-          <Link href="/board">
-            <span className="text-white font-semibold hover:text-emerald-200">
-              정보게시판
-            </span>
-          </Link>
-          <Link href="/chatbot">
-            <span
-              className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionCheck}
-            >
-              재활용 챗봇
-            </span>
-          </Link>
-          <Link href="/map">
-            <span
-              className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionCheck}
-            >
-              재활용 지도
-            </span>
-          </Link>
-        </div>
+      <div className="flex items-center ml-6">
         {session ? (
           <button
             onClick={handleAuthAction}
-            className="bg-red-400 p-1 rounded-lg font-semibold text-white"
+            className="bg-red-400 px-3 py-1 rounded-lg font-semibold text-white hover:bg-red-500 transition-colors"
           >
             Sign Out
           </button>
         ) : (
           <Link
             href="/login"
-            className="bg-green-400 p-1 rounded-lg font-semibold text-white"
+            className="bg-green-400 px-3 py-1 rounded-lg font-semibold text-white hover:bg-green-500 transition-colors"
           >
             Sign In
           </Link>
         )}
+      </div>
+
+      <div className="lg:hidden ml-4">
         <Image
-          className="bg-green-850 block lg:hidden cursor-pointer ml-4 hover:bg-emerald-500 rounded-md"
+          className="bg-green-850 cursor-pointer hover:bg-emerald-500 rounded-md p-1"
           src="/toggle.svg"
           width={32}
           height={32}
@@ -122,7 +95,13 @@ export default function LinksNav() {
       </div>
 
       {isMenuOpen && (
-        <div className="z-50 absolute top-full right-4 bg-green-800 p-4 lg:hidden">
+        <div className="absolute top-full right-0 bg-green-800 p-4 lg:hidden mt-2 rounded-lg shadow-lg">
+          <Link
+            href="/about"
+            className="block py-2 text-white hover:text-emerald-200"
+          >
+            About us
+          </Link>
           <Link
             href="/board"
             className="block py-2 text-white hover:text-emerald-200"

@@ -8,22 +8,28 @@ import TodoList from "@/components/todo/TodoList";
 
 export default function Page() {
   return (
-    <div className="">
-      <div>
-        <div>
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-6 sm:mb-8 lg:mb-10">
           <Search />
-          <Swipers />
+          <div className="mt-4 sm:mt-6">
+            <Swipers />
+          </div>
         </div>
-        <div className="max-w-3xl mx-auto bg-green-200 bg-opacity-60 shadow-lg rounded-lg mt-10">
-          <h1 className="text-center font-bold text-[20px]">
+        <div className="bg-green-200 bg-opacity-60 shadow-lg rounded-lg mt-6 p-4 sm:p-6 lg:p-8">
+          <h1 className="text-center font-bold text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6">
             재활용품 장바구니
           </h1>
           <AddTodoForm />
-          <TodoList />
+          <div className="mt-4 sm:mt-6">
+            <TodoList />
+          </div>
         </div>
       </div>
 
-      <News />
+      <div className="mt-8 sm:mt-10 lg:mt-12">
+        <News />
+      </div>
     </div>
   );
 }
