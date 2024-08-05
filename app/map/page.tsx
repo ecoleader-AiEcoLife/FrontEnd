@@ -6,7 +6,7 @@ import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 
 const API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
 
-export default function map() {
+export default function MapPage() {
   const [state, setState] = useState({
     center: {
       lat: 35.8888,

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface DataProps {
   id: number;
@@ -79,10 +80,12 @@ export default function Search() {
               onClick={() => handleItemClick(item.id)}
             >
               <h2 className="font-bold text-xl mb-2">{item.title}</h2>
-              <img
+              <Image
                 src={item.imgUrl}
                 alt={item.title}
-                className="w-32 h-32 object-cover mb-2"
+                width={128}
+                height={128}
+                className="object-cover mb-2"
               />
               <p className="mb-1">
                 <strong>분류:</strong> {item.type.name}

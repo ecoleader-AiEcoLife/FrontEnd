@@ -35,7 +35,7 @@ export default function InfoPost({ params }: Params) {
 
   useEffect(() => {
     getBoard();
-  }, []);
+  }, [params.id]);
 
   if (!board) {
     return (

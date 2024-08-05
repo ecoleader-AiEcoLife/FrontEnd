@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface RecycleProps {
@@ -16,11 +17,12 @@ export default function Card({ id, title, imgUrl }: RecycleProps) {
           </div>
           <div className="relative flex-grow">
             {imgUrl && (
-              <img
+              <Image
                 src={imgUrl}
                 alt="사진 없음"
-                className="object-cover w-full h-full absolute inset-0"
-                // absolute inset-0: 부모 요소를 기준으로 상하좌우 0 위치에 놓이게 되어, 부모 요소를 완전히 채우게 됌
+                fill
+                sizes="100vw"
+                className="object-cover"
               />
             )}
           </div>

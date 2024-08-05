@@ -1,4 +1,5 @@
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -94,9 +95,11 @@ export default function LinksNav() {
             Sign In
           </Link>
         )}
-        <img
-          className="bg-green-850 size-8 block lg:hidden cursor-pointer ml-4 hover:bg-emerald-500 rounded-md"
+        <Image
+          className="bg-green-850 block lg:hidden cursor-pointer ml-4 hover:bg-emerald-500 rounded-md"
           src="/toggle.svg"
+          width={32}
+          height={32}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           alt="Toggle menu"
         />

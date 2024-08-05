@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import { CustomOverlayMap, MapMarker } from "react-kakao-maps-sdk";
 
@@ -35,10 +36,13 @@ export default function EventMarker({
               </button>
             </div>
             <div className="p-3">
-              <img
+              <Image
                 src={imgUrl}
-                className="w-full h-48 object-cover mb-3 rounded"
+                width={500}
+                height={192}
+                className="w-full object-cover mb-3 rounded"
                 alt={title}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="text-m">위치: {location}</div>
             </div>

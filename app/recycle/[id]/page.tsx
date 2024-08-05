@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Params {
   params: {
@@ -72,10 +73,12 @@ export default function RecyclePages({ params }: Params) {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-green-800">{main.title}</h1>
-          <img
-            className="w-40 h-40 object-cover rounded-lg"
+          <Image
+            className="object-cover rounded-lg"
             src={main.imgUrl}
             alt={main.title}
+            width={160}
+            height={160}
           />
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -91,10 +94,12 @@ export default function RecyclePages({ params }: Params) {
                       재활용 분류: {item.type.name}
                     </p>
                   </div>
-                  <img
-                    className="w-20 h-20 object-cover rounded"
+                  <Image
+                    className="object-cover rounded"
                     src={item.imgUrl}
                     alt={item.title}
+                    width={80}
+                    height={80}
                   />
                 </div>
               </div>
