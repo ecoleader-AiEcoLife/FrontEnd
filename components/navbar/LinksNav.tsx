@@ -33,25 +33,17 @@ export default function LinksNav() {
     }
   };
 
-  const handleSessionProtect =
-    (path: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleSessionCheck = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!isAuthenticated) {
       e.preventDefault();
-      if (status === "loading") {
-        return; // 로딩 중에는 아무 작업도 하지 않음
-      }
-      if (!isAuthenticated) {
-        alert("로그인 이후 이용해주세요.");
-        router.push("/login");
-      } else {
-        router.push(path);
-      }
-    };
+      alert("로그인 이후 이용해주세요.");
+      router.push("/login");
+    }
+  };
 
   useEffect(() => {
     if (status === "authenticated") {
-      setIsAuthenticated(true);
-    } else {
-      setIsAuthenticated(false);
+      setIsAuthenticated(status === "authenticated");
     }
   }, [status]);
 
@@ -90,7 +82,7 @@ export default function LinksNav() {
           <Link href="/chatbot">
             <span
               className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionProtect("/chatbot")}
+              onClick={handleSessionCheck}
             >
               재활용 챗봇
             </span>
@@ -98,7 +90,7 @@ export default function LinksNav() {
           <Link href="/map">
             <span
               className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionProtect("/map")}
+              onClick={handleSessionCheck}
             >
               재활용 지도
             </span>
@@ -140,14 +132,14 @@ export default function LinksNav() {
           <Link
             href="/chatbot"
             className="block py-2 text-white hover:text-emerald-200"
-            onClick={handleSessionProtect("/chatbot")}
+            onClick={handleSessionCheck}
           >
             재활용 챗봇
           </Link>
           <Link
             href="/map"
             className="block py-2 text-white hover:text-emerald-200"
-            onClick={handleSessionProtect("/map")}
+            onClick={handleSessionCheck}
           >
             재활용 지도
           </Link>
