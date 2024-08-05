@@ -7,8 +7,8 @@ import { AuthProvider } from "./Providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Eddy Project",
-  description: "AI Web project",
+  title: "에디 재활용 지키미",
+  description: "Eco recycle AI",
 };
 
 export default function RootLayout({

@@ -2,13 +2,14 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LinksNav() {
   const [copy, setCopy] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const router = useRouter();
 
@@ -19,17 +20,39 @@ export default function LinksNav() {
   };
 
   const handleAuthAction = () => {
+    if (status === "loading") {
+      <div className="flex justify-center items-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white">
+          로딩중...
+        </div>
+      </div>;
+    }
+
     if (session) {
       signOut({ callbackUrl: "/" });
     }
   };
 
-  const handleSessionProtect = () => {
-    if (!session) {
+  const handleSessionProtect = (path: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (status === "loading") {
+      return; // 로딩 중에는 아무 작업도 하지 않음
+    }
+    if (!isAuthenticated) {
       alert("로그인 이후 이용해주세요.");
       router.push("/login");
+    } else {
+      router.push(path);
     }
   };
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [status]);
 
   return (
     <div className="relative flex justify-between items-center p-4">
@@ -66,7 +89,7 @@ export default function LinksNav() {
           <Link href="/chatbot">
             <span
               className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionProtect}
+              onClick={handleSessionProtect("/chatbot")}
             >
               재활용 챗봇
             </span>
@@ -74,7 +97,7 @@ export default function LinksNav() {
           <Link href="/map">
             <span
               className="text-white font-semibold hover:text-emerald-200"
-              onClick={handleSessionProtect}
+              onClick={handleSessionProtect("/map")}
             >
               재활용 지도
             </span>
