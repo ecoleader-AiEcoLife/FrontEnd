@@ -41,7 +41,7 @@ export default function Swipers() {
           재활용 종류
         </h1>
         <Swiper
-          className="w-[900px] h-[400px]"
+          className="sm:w-[400px] sm:h-[200px] md:w-[600px] md:h-[300px] lg:w-[900px] lg:h-[400px]"
           spaceBetween={10}
           slidesPerView={1.5}
           simulateTouch={true}
