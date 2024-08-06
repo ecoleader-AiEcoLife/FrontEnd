@@ -59,7 +59,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="찾으시는 제품을 입력해주세요."
-          className="w-[600px] h-12 pl-4 rounded-3xl border-2 border-green-500"
+          className="sm:w-[300px] md:w-[450px] lg:w-[600px] text-sm h-12 pl-4 rounded-3xl border-2 border-green-500"
           value={searchItem}
           onChange={(e) => setSearchItem(e.target.value)}
           onKeyPress={handleKeyPress}

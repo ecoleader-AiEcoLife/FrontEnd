@@ -1,4 +1,5 @@
 "use client";
+// json-server --watch db.json --port 3001
 
 import News from "@/components/news/News";
 import Search from "@/components/search/Search";
