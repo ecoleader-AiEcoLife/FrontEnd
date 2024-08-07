@@ -8,30 +8,27 @@ import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface recycleProps {
+interface RecycleProps {
   id: string;
   title: string;
   imgUrl: string;
 }
-const URL = "http://localhost:3001";
 
 export default function Swipers() {
-  const [recycle, setRecycle] = useState<recycleProps[]>([]);
+  const [recycles, setRecycles] = useState<RecycleProps[]>([]);
   const [currentCard, setCurrentCard] = useState(0);
 
-  const getRecycle = async () => {
-    await axios
-      .get(`${URL}/disboard`)
-      .then((res) => {
-        setRecycle(res.data.main);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  const getRecycles = async () => {
+    try {
+      const response = await axios.get("/api/recycle");
+      setRecycles(response.data.recycles);
+    } catch (err) {
+      console.error("Error fetching recycles:", err);
+    }
   };
 
   useEffect(() => {
-    getRecycle();
+    getRecycles();
   }, []);
 
   return (
@@ -40,28 +37,32 @@ export default function Swipers() {
         <h1 className="bg-green-200 rounded-md p-1 font-bold text-3xl text-center mb-4 text-green-700">
           재활용 종류
         </h1>
-        <Swiper
-          className="sm:w-[400px] sm:h-[200px] md:w-[600px] md:h-[300px] lg:w-[900px] lg:h-[400px]"
-          spaceBetween={10}
-          slidesPerView={1.5}
-          simulateTouch={true}
-          grabCursor={true}
-          centeredSlides={true}
-          initialSlide={currentCard}
-          onSlideChange={(swiper) => {
-            setCurrentCard(swiper.snapIndex);
-          }}
-          observer={true}
-          navigation={true}
-          pagination={true}
-          modules={[Navigation, Pagination]}
-        >
-          {recycle?.map((item) => (
-            <SwiperSlide key={item.id}>
-              <Card id={item.id} title={item.title} imgUrl={item.imgUrl} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {recycles.length > 0 ? (
+          <Swiper
+            className="sm:w-[400px] sm:h-[200px] md:w-[600px] md:h-[300px] lg:w-[900px] lg:h-[400px]"
+            spaceBetween={10}
+            slidesPerView={1.5}
+            simulateTouch={true}
+            grabCursor={true}
+            centeredSlides={true}
+            initialSlide={currentCard}
+            onSlideChange={(swiper) => {
+              setCurrentCard(swiper.snapIndex);
+            }}
+            observer={true}
+            navigation={true}
+            pagination={true}
+            modules={[Navigation, Pagination]}
+          >
+            {recycles.map((item) => (
+              <SwiperSlide key={item.id}>
+                <Card id={item.id} title={item.title} imgUrl={item.imgUrl} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <p>Loading...</p>
+        )}
         <h2 className="pt-3 font-semibold text-center">
           클릭하여 자세한 정보를 알아보아요!
         </h2>
