@@ -88,23 +88,28 @@ export default function MapPage() {
           )}
         </Map>
       </div>
-      <div className="bg-violet-100 p-4 m-8 rounded-md  ">
-        <span className="font-bold">
-          재활용 쓰레기통의 위치를 추가 해주세요! ( 야외인 경우 상세 주소만
-          적어주세요 )
+      <div className="bg-violet-100 p-4 mx-4 my-8 rounded-md w-full max-w-[80%]">
+        <span className="font-bold sm:text-sm lg:text-lg flex flex-col justify-center items-center">
+          <span>재활용 쓰레기통의 위치를 추가 해주세요!</span>
+          <span className="text-sm text-gray-600 mt-2">
+            ( 야외인 경우 상세 주소만 적어주세요 )
+          </span>
         </span>
-        <form className="flex gap-5">
+
+        <form className="flex flex-col sm:flex-row gap-3 mt-4">
           <input
-            className="bg-slate-100 pl-2"
+            className="bg-slate-100 pl-2 py-1 rounded flex-grow"
             type="text"
             placeholder="건물 번호"
-          ></input>
+          />
           <input
-            className="bg-slate-100 pl-2"
+            className="bg-slate-100 pl-2 py-1 rounded flex-grow"
             type="text"
             placeholder="상세 주소"
-          ></input>
-          <button className="bg-red-600 rounded-md p-1 text-white">전송</button>
+          />
+          <button className="bg-red-600 rounded-md px-4 py-1 text-white">
+            전송
+          </button>
         </form>
       </div>
     </div>
