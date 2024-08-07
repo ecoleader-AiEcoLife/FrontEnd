@@ -7,26 +7,22 @@ import Image from "next/image";
 
 interface Params {
   params: {
-    id: string;
+    title: string;
   };
 }
 
 interface DetailProps {
-  id: number;
   title: string;
-  type: { id: number; name: string };
+  type: string;
   imgUrl: string;
   context: string;
   subcontext: string;
 }
 
 interface MainData {
-  id: string;
   title: string;
   imgUrl: string;
 }
-
-const URL = "http://localhost:3001";
 
 export default function RecyclePages({ params }: Params) {
   const [main, setMain] = useState<MainData | null>(null);
@@ -34,12 +30,16 @@ export default function RecyclePages({ params }: Params) {
 
   const getMainRecycle = async () => {
     try {
-      const res = await axios.get(`${URL}/disboard`);
-      const ID = parseInt(params.id) - 1;
-      if (res.data.main[ID]) {
-        setMain(res.data.main[ID]);
+      // 서버에 title 파라미터를 포함하여 요청
+      const res = await axios.get(
+        `/api/recycle?title=${encodeURIComponent(params.title)}`
+      );
+
+      if (res.data.recycle) {
+        // 서버에서 이미 필터링된 데이터를 받아옴
+        setMain(res.data.recycle);
       } else {
-        console.error("Main data not found for the given ID");
+        console.error("Main recycle data not found");
       }
     } catch (error) {
       console.error("Error fetching main data:", error);
@@ -48,21 +48,24 @@ export default function RecyclePages({ params }: Params) {
 
   const getDetailRecycle = async () => {
     try {
-      const res = await axios.get(`${URL}/disboard`);
-      if (res.data.list[params.id]) {
-        setDetail(res.data.list[params.id]);
+      const res = await axios.get(
+        `/api/recycledetail?title=${encodeURIComponent(params.title)}`
+      );
+      if (res.data.recycledetail) {
+        setDetail(res.data.recycledetail);
       } else {
-        console.error("Detail data not found for the given ID");
+        console.error("Recycle detail data not found");
+        setDetail([]);
       }
     } catch (error) {
       console.error("Error fetching detail data:", error);
+      setDetail([]);
     }
   };
-
   useEffect(() => {
     getMainRecycle();
     getDetailRecycle();
-  }, [params.id]);
+  }, []);
 
   if (!main) {
     return <div>Loading...</div>;
@@ -83,7 +86,7 @@ export default function RecyclePages({ params }: Params) {
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {detail.map((item) => (
-            <Link key={item.id} href={`/recycle/detail/${item.id}`}>
+            <Link key={item.title} href={`/recycle/detail/${item.title}`}>
               <div className="border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer">
                 <div className="flex justify-between items-start">
                   <div>
@@ -91,7 +94,7 @@ export default function RecyclePages({ params }: Params) {
                       {item.title}
                     </h2>
                     <p className="mt-2 text-sm text-gray-600">
-                      재활용 분류: {item.type.name}
+                      재활용 분류: {item.type}
                     </p>
                   </div>
                   <Image

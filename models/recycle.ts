@@ -22,6 +22,7 @@ const recycleSchema = new Schema(
   }
 );
 
-const Recycle = models.Recycle || mongoose.model("Recycle", recycleSchema);
+// 모델이 이미 존재하는 경우 기존 모델을 사용, 그렇지 않으면 새로 생성
+const Recycle = mongoose.models.Recycle || mongoose.model("Recycle", recycleSchema);
 
 export default Recycle;

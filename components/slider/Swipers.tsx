@@ -21,7 +21,7 @@ export default function Swipers() {
   const getRecycles = async () => {
     try {
       const response = await axios.get("/api/recycle");
-      setRecycles(response.data.recycles);
+      setRecycles(response.data.recycle);
     } catch (err) {
       console.error("Error fetching recycles:", err);
     }
