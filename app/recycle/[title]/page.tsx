@@ -12,6 +12,7 @@ interface Params {
 }
 
 interface DetailProps {
+  _id: string;
   title: string;
   type: string;
   imgUrl: string;
@@ -30,13 +31,10 @@ export default function RecyclePages({ params }: Params) {
 
   const getMainRecycle = async () => {
     try {
-      // 서버에 title 파라미터를 포함하여 요청
       const res = await axios.get(
         `/api/recycle?title=${encodeURIComponent(params.title)}`
       );
-
       if (res.data.recycle) {
-        // 서버에서 이미 필터링된 데이터를 받아옴
         setMain(res.data.recycle);
       } else {
         console.error("Main recycle data not found");
@@ -62,10 +60,11 @@ export default function RecyclePages({ params }: Params) {
       setDetail([]);
     }
   };
+
   useEffect(() => {
     getMainRecycle();
     getDetailRecycle();
-  }, []);
+  }, [params.title]);
 
   if (!main) {
     return <div>Loading...</div>;
@@ -86,7 +85,21 @@ export default function RecyclePages({ params }: Params) {
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {detail.map((item) => (
-            <Link key={item.title} href={`/recycle/detail/${item.title}`}>
+            <Link
+              key={item._id}
+              href={{
+                pathname: `/recycle/${encodeURIComponent(
+                  params.title
+                )}/${encodeURIComponent(item._id)}`,
+                query: {
+                  title: encodeURIComponent(item.title),
+                  type: encodeURIComponent(item.type),
+                  imgUrl: encodeURIComponent(item.imgUrl),
+                  context: encodeURIComponent(item.context),
+                  subcontext: encodeURIComponent(item.subcontext),
+                },
+              }}
+            >
               <div className="border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer">
                 <div className="flex justify-between items-start">
                   <div>

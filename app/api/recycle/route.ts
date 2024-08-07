@@ -11,7 +11,6 @@ export async function GET(req: NextRequest) {
 
         let recycleData;
         if (title) {
-            console.log("Searching for recycle data with title:", title);
             // 대소문자 구분 없이 검색하고, 부분 일치도 허용
             recycleData = await Recycle.findOne({ 
                 title: { $regex: new RegExp(title, 'i') } 
