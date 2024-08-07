@@ -32,16 +32,16 @@ export default function Swipers() {
   }, []);
 
   return (
-    <div className="mt-12 flex flex-col justify-center items-center">
-      <div className="bg-green-300 bg-opacity-20 p-8 rounded-lg">
-        <h1 className="bg-green-200 rounded-md p-1 font-bold text-3xl text-center mb-4 text-green-700">
+    <div className="mt-12 flex flex-col justify-center items-center px-4">
+      <div className="bg-green-300 bg-opacity-20 p-4 sm:p-8 rounded-lg w-full max-w-[900px]">
+        <h1 className="bg-green-200 rounded-md p-1 font-bold text-xl sm:text-3xl text-center mb-4 text-green-700">
           재활용 종류
         </h1>
         {recycles.length > 0 ? (
           <Swiper
-            className="sm:w-[400px] sm:h-[200px] md:w-[600px] md:h-[300px] lg:w-[900px] lg:h-[400px]"
+            className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px]"
             spaceBetween={10}
-            slidesPerView={1.5}
+            slidesPerView={1}
             simulateTouch={true}
             grabCursor={true}
             centeredSlides={true}
@@ -53,6 +53,17 @@ export default function Swipers() {
             navigation={true}
             pagination={true}
             modules={[Navigation, Pagination]}
+            breakpoints={{
+              640: {
+                slidesPerView: 1.2,
+              },
+              768: {
+                slidesPerView: 1.3,
+              },
+              1024: {
+                slidesPerView: 1.5,
+              },
+            }}
           >
             {recycles.map((item) => (
               <SwiperSlide key={item.id}>
@@ -63,7 +74,7 @@ export default function Swipers() {
         ) : (
           <p>Loading...</p>
         )}
-        <h2 className="pt-3 font-semibold text-center">
+        <h2 className="pt-3 font-semibold text-center text-sm sm:text-base">
           클릭하여 자세한 정보를 알아보아요!
         </h2>
       </div>
