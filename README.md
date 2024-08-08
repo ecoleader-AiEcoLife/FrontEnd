@@ -27,6 +27,8 @@ Frontend (Full-Stack)
 
 <구현>
 
+전체적인 Data : MongoDB 이용하였음
+
 1) 재활용 정보 게시판 기능
    - 슬라이딩(Swiper) , Dynamic Routes , Restful API
   
@@ -43,7 +45,7 @@ Frontend (Full-Stack)
    - 진행중..
 
 7) 회원가입 - JWT (Jason Web Token)
-   - 진행중..
+   - MongoDB, NextAuth (Token, Session 이용)
   
 8) To-Do List
    - Zustand 상태관리 라이브러리 사용
