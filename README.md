@@ -52,8 +52,6 @@ Frontend (Full-Stack)
 <br/><br/>
 
 < 추가해야 할 기능 >
-1) To-Do list?
-2) 회원가입
 3) Chat GPT
 4) 장바구니
 
@@ -107,7 +105,7 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
 
 하지만 문제점이 URL 주소에 쿼리까지 나타나있어서 나중에 특정한 재활용품을 search할때 해당 정보가 있는 동적 페이지로 이동을 못함..
   <br/>
--> 매번 page 마다 rest api 호출
+-> 매번 page 마다 rest api 호출 + detail Page로 넘겨줄땐 URL를 통한 Params로 encoding, decoding을 통해 Props 이동
 
   <br/>
   
