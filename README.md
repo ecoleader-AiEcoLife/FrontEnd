@@ -114,6 +114,11 @@ fake server 의 db.json 에서 board 의 data들이 리스트 형태로 되있�
 patch가 아닌 put의 rest API를 통해 전체 data를 바꿈
 
 
+<br/><br/>
+
+useRouter 는 클라이언트 컴포넌트에서   useParams, usePathname 등은  URL 정보 읽기 <br/>
+(permanentRedriect 혹은 )redirect는 서버에서 사이드 작업에서    (next.js참고)
+
 
 
 
