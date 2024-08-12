@@ -1,4 +1,8 @@
 - **재활용품 홈페이지**  <br/>
+
+URL : https://eddy-eco.vercel.app/
+
+<br/><br/>
 대구 지방청과 협업을 맺어 재활용 웹사이트 팀 프로젝트 (백엔드, AI 협업)
 <br/>
 Frontend (Full-Stack)
