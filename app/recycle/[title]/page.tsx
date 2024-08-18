@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRecycleStore } from "@/store/RecycleStore";
 
 interface Params {
   params: {
@@ -28,6 +29,17 @@ interface MainData {
 export default function RecyclePages({ params }: Params) {
   const [main, setMain] = useState<MainData | null>(null);
   const [detail, setDetail] = useState<DetailProps[]>([]);
+
+  const { setTitle, setType, setImgUrl, setContext, setSubContext } =
+    useRecycleStore();
+
+  const onClick = (item: DetailProps) => {
+    setTitle(item.title),
+      setType(item.type),
+      setImgUrl(item.imgUrl),
+      setContext(item.context),
+      setSubContext(item.subcontext);
+  };
 
   const getMainRecycle = async () => {
     try {
@@ -86,19 +98,9 @@ export default function RecyclePages({ params }: Params) {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {detail.map((item) => (
             <Link
+              onClick={() => onClick(item)}
               key={item._id}
-              href={{
-                pathname: `/recycle/${encodeURIComponent(
-                  params.title
-                )}/${encodeURIComponent(item._id)}`,
-                query: {
-                  title: encodeURIComponent(item.title),
-                  type: encodeURIComponent(item.type),
-                  imgUrl: encodeURIComponent(item.imgUrl),
-                  context: encodeURIComponent(item.context),
-                  subcontext: encodeURIComponent(item.subcontext),
-                },
-              }}
+              href={`/recycle/${params.title}/${item.title}`}
             >
               <div className="border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer">
                 <div className="flex justify-between items-start">
