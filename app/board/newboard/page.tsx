@@ -4,16 +4,15 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-interface ItemProps {
-  id: number;
+interface boardProps {
+  id: string;
   title: string;
   body: string;
+  date: string;
 }
 
-const URL = "http://localhost:3001";
-
 export default function Newboard() {
-  const [board, setBoard] = useState<ItemProps[]>([]);
+  const [board, setBoard] = useState<boardProps[]>([]);
   const [newTitle, setNewTitle] = useState<string>("");
   const [newBody, setNewBody] = useState<string>("");
 
@@ -21,23 +20,23 @@ export default function Newboard() {
 
   const router = useRouter();
 
-  const getBoardList = async () => {
+  const getBoard = async () => {
     try {
-      const res = await axios.get<ItemProps[]>(`${URL}/board`);
+      const res = await axios.get<boardProps[]>("/api/board");
       setBoard(res.data);
     } catch (error) {
-      console.error("데이터 가져오기 실패:", error);
+      console.log("데이터 get 실패", error);
     }
   };
 
   useEffect(() => {
-    getBoardList();
+    getBoard();
   }, []);
 
   const handlePost = async () => {
     try {
       const newId = board.length + 1;
-      await axios.post(`${URL}/board`, {
+      const res = await axios.post("/api/board", {
         id: newId,
         title: newTitle,
         body: newBody,
@@ -46,11 +45,14 @@ export default function Newboard() {
         }월 ${today.getDate()}일`,
       });
 
-      alert("게시글이 성공적으로 추가되었습니다.");
-      setNewTitle("");
-      setNewBody("");
-
-      router.push("/board");
+      if (res.status === 201) {
+        alert("게시글이 성공적으로 추가되었습니다.");
+        setNewTitle("");
+        setNewBody("");
+        router.push("/board");
+      } else {
+        console.log("Posting failed");
+      }
     } catch (error) {
       console.error("데이터 Post 실패:", error);
       alert("게시판 추가 실패 (Post)");

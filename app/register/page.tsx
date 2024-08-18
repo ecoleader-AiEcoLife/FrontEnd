@@ -21,17 +21,6 @@ export default function RegisterPage() {
     }
 
     try {
-      /*
-      const resUserExists = await axios.post("/api/userExists", {
-        email,
-      });
-
-      if (resUserExists.data.user) {
-        setError("User already exists.");
-        return;
-      }
-        */
-
       const res = await axios.post("/api/register", {
         name,
         email,

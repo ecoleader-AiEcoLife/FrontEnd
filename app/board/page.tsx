@@ -12,16 +12,14 @@ interface boardProps {
   date: string;
 }
 
-const URL = "http://localhost:3001";
-
-const Board = () => {
+export default function BoardPage() {
   const [board, setBoard] = useState<boardProps[]>([]);
 
   const router = useRouter();
 
   const getBoard = async () => {
     try {
-      const res = await axios.get<boardProps[]>(`${URL}/board`);
+      const res = await axios.get<boardProps[]>("/api/board");
       setBoard(res.data);
     } catch (error) {
       console.log("데이터 get 실패", error);
@@ -29,7 +27,7 @@ const Board = () => {
   };
 
   const handleClick = async (id: string) => {
-    router.push(`http://localhost:3000/board/${id}`);
+    router.push(`/board/${id}`);
   };
 
   useEffect(() => {
@@ -92,6 +90,4 @@ const Board = () => {
       </div>
     </div>
   );
-};
-
-export default Board;
+}
