@@ -10,15 +10,13 @@ interface PositionProps {
   lng: number;
 }
 
-const URL = "http://localhost:3001";
-
 export default function Addmarkers() {
   const [positions, setPositions] = useState<PositionProps[]>([]);
 
   const getPositions = async () => {
     try {
-      const response = await axios.get(`${URL}/map`);
-      setPositions(response.data.marker);
+      const response = await axios.get(`/api/map`);
+      setPositions(response.data);
     } catch (error) {
       console.error(error);
     }
