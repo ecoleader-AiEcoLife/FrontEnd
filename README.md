@@ -110,8 +110,15 @@ app 디렉토리 내의 route.ts 파일은 자동으로 서버 사이드에서 �
 하지만 문제점이 URL 주소에 쿼리까지 나타나있어서 나중에 특정한 재활용품을 search할때 해당 정보가 있는 동적 페이지로 이동을 못함..
   <br/>
 -> 매번 page 마다 rest api 호출
-
   <br/>
+
+  상세(detail) 페이지로 URL을 통해서 encodeURIComponent, decodeURIComponent을 이용해서 Props를 넘겨주는 방식을 처음에 사용하였으나 URL이 너무 지져분하고 길어짐, 코드도 너무 길어지고 지저분함
+  <br/> 
+  -> Zustand 상태관리 라이브러리를 사용함으로써 URL 과 코드를 간결하게 만듬
+
+<br/>
+그러나 새로고침할 경우 다 data들이 초기화됌 .. -> 메모리에 상태들이 저장되는데, 메모리는 휘발성이기 때문에 저장이 안됌<br/>
+Local Storage에 저장하는 방식을 사용해야함
   
 4. view 조회수 아직 실패   <br/>
 fake server 의 db.json 에서 board 의 data들이 리스트 형태로 되있어서 patch를 시도해보았지만 객체들의 리스트에서 특정한 객체의 id를 비교해서 조회수(view)를 바꾸는것이 불가하여
