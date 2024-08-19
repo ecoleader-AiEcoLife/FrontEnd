@@ -52,11 +52,9 @@ export default function RecyclePages() {
     }
   };
 
-  console.log("메인!!!", main);
-
   const getDetailRecycle = async () => {
     try {
-      const res = await axios.get("/api/recycledetail");
+      const res = await axios.get(`/api/recycledetail?type=${type}`);
       if (res.data) {
         setDetail(res.data);
       } else {

@@ -14,7 +14,6 @@ export async function GET(req: NextRequest) {
         if (type) {
             // MongoDB에서 정확히 'type' 값이 '종이류'인 데이터를 찾습니다.
             const recycle2 = await Recycle.find({ title: type});
-            console.log("리사이클링2: ", recycle2);
             return NextResponse.json(recycle2, { status: 200 });
         }
 

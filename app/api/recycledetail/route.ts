@@ -5,19 +5,16 @@ import { NextRequest, NextResponse } from "next/server"
 export async function GET(req: NextRequest) {
     try {
         await connectMongoDB();
-/*
+
+        // URL에서 'type' 파라미터를 가져와 디코딩합니다.
         const url = new URL(req.url);
-        const title = url.searchParams.get('title');
+        const typeParam = url.searchParams.get("type");
+        const type = typeParam ? decodeURIComponent(typeParam).trim() : null;
 
-        if (!title) {
-            return NextResponse.json({ message: "Title parameter is required" }, { status: 400 });
-        }
+        const recycledetail = await RecycleDetail.find({ type: type});
+        console.log("리사이클링 디테일: ", recycledetail);
+        return NextResponse.json(recycledetail, { status: 200 });
 
-        const recycledetail = await RecycleDetail.find({ type: title });
-*/
-
-        const recycledetail = await RecycleDetail.find({})
-        return NextResponse.json( recycledetail , { status: 200 });
     } catch (error) {
         console.error("Error fetching recycle detail data:", error);
         return NextResponse.json(
