@@ -1,3 +1,4 @@
+"use client";
 import useTodoStore from "@/store/todoStore";
 
 interface Todo {

@@ -1,3 +1,4 @@
+"use client";
 import useTodoStore from "@/store/todoStore";
 import { useState, FormEvent } from "react";
 
