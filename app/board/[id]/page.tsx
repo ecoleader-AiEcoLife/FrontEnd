@@ -9,7 +9,7 @@ interface BoardProps {
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 interface Params {
   params: {
@@ -17,17 +17,15 @@ interface Params {
   };
 }
 
-const URL = "http://localhost:3001";
-
-export default function InfoPost({ params }: Params) {
+export default function InfoPost() {
   const [board, setBoard] = useState<BoardProps | null>(null);
   const router = useRouter();
+  const { id } = useParams();
 
   const getBoard = async () => {
     try {
-      const Index = parseInt(params.id) - 1;
-      const res = await axios.get(`${URL}/board`);
-      setBoard(res.data[Index]);
+      const res = await axios.get(`/api/board?id=${id}`);
+      setBoard(res.data[0]);
     } catch (error) {
       console.log("Info Page get 에러", error);
     }
@@ -35,7 +33,7 @@ export default function InfoPost({ params }: Params) {
 
   useEffect(() => {
     getBoard();
-  }, [params.id]);
+  }, [id]);
 
   if (!board) {
     return (

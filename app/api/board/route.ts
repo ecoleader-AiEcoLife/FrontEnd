@@ -6,6 +6,15 @@ import { NextRequest, NextResponse } from "next/server"
 export async function GET(req: NextRequest) {
     try {
         await connectMongoDB();
+        const url = new URL(req.url)
+        const id = url.searchParams.get('id')
+        console.log("아이디", id)
+
+        if(id){
+            const board2 = await Board.find({ id: id});
+            console.log("출력",board2)
+            return NextResponse.json(board2, { status: 200 });
+        }
 
         const board = await Board.find({})
 
