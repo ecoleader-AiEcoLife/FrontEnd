@@ -95,7 +95,7 @@ export default function LinksNav() {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full right-0 bg-green-800 p-4 mt-2 rounded-lg shadow-lg">
+        <div className="z-10 lg:hidden absolute top-full right-0 bg-green-800 p-4 mt-2 rounded-lg shadow-lg">
           <Link
             href="/about"
             className="block py-2 text-white hover:text-emerald-200"
