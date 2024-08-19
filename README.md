@@ -6,7 +6,7 @@ URL : https://eddy-eco.vercel.app/
 대구 지방청과 협업을 맺어 재활용 웹사이트 팀 프로젝트 (백엔드, AI 협업)
 
 < 본인의 역할 >
-- FUllStack으로 프론트 및 백엔드를 모두 담당하였다. 프론트의 프레임워크로는 React기반 Framwork인 NextJS를 이용하였고 백엔드로는 mongoose를 이용한 MongoDB를 이용하였다.
+- FullStack으로 프론트 및 백엔드를 모두 담당하였다. 프론트의 프레임워크로는 React기반 Framwork인 NextJS를 이용하였고 백엔드로는 mongoose를 이용한 MongoDB를 이용하였다.
 
 <br/>
 Frontend (Full-Stack)
