@@ -6,13 +6,11 @@ import Image from "next/image";
 interface DataProps {
   id: number;
   title: string;
-  type: { id: number; name: string };
+  type: string;
   imgUrl: string;
   context: string;
   subcontext: string;
 }
-
-const URL = "http://localhost:3001";
 
 export default function Search() {
   const [allData, setAllData] = useState<DataProps[]>([]);
@@ -22,8 +20,8 @@ export default function Search() {
 
   const getAllData = async () => {
     try {
-      const res = await axios.get(`${URL}/disboard`);
-      setAllData(res.data.all);
+      const res = await axios.get("/api/recycledetail");
+      setAllData(res.data);
     } catch (error) {
       console.error(error);
     }
@@ -88,7 +86,7 @@ export default function Search() {
                 className="object-cover mb-2"
               />
               <p className="mb-1">
-                <strong>분류:</strong> {item.type.name}
+                <strong>분류:</strong> {item.type}
               </p>
               <p className="mb-1">
                 <strong>재활용 방법:</strong> {item.context}

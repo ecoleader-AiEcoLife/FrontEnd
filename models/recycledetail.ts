@@ -8,8 +8,8 @@ const recycleSchema = new Schema(
     },
 
     type:{
-        type:String,
-        required:true,
+          type:String,
+          required:true,
     },
 
     context:{

@@ -5,12 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRecycleStore } from "@/store/RecycleStore";
-
-interface Params {
-  params: {
-    title: string;
-  };
-}
+import { useParams } from "next/navigation";
 
 interface DetailProps {
   _id: string;
@@ -26,9 +21,12 @@ interface MainData {
   imgUrl: string;
 }
 
-export default function RecyclePages({ params }: Params) {
+export default function RecyclePages() {
   const [main, setMain] = useState<MainData | null>(null);
   const [detail, setDetail] = useState<DetailProps[]>([]);
+
+  const params = useParams(); // useparams하면 encode된 URL이 나옴..
+  const type = decodeURIComponent(params.type as string);
 
   const { setTitle, setType, setImgUrl, setContext, setSubContext } =
     useRecycleStore();
@@ -43,11 +41,9 @@ export default function RecyclePages({ params }: Params) {
 
   const getMainRecycle = async () => {
     try {
-      const res = await axios.get(
-        `/api/recycle?title=${encodeURIComponent(params.title)}`
-      );
-      if (res.data.recycle) {
-        setMain(res.data.recycle);
+      const res = await axios.get(`/api/recycle?type=${type}`);
+      if (res.data) {
+        setMain(res.data[0]);
       } else {
         console.error("Main recycle data not found");
       }
@@ -56,13 +52,13 @@ export default function RecyclePages({ params }: Params) {
     }
   };
 
+  console.log("메인!!!", main);
+
   const getDetailRecycle = async () => {
     try {
-      const res = await axios.get(
-        `/api/recycledetail?title=${encodeURIComponent(params.title)}`
-      );
-      if (res.data.recycledetail) {
-        setDetail(res.data.recycledetail);
+      const res = await axios.get("/api/recycledetail");
+      if (res.data) {
+        setDetail(res.data);
       } else {
         console.error("Recycle detail data not found");
         setDetail([]);
@@ -76,7 +72,7 @@ export default function RecyclePages({ params }: Params) {
   useEffect(() => {
     getMainRecycle();
     getDetailRecycle();
-  }, [params.title]);
+  }, [type]);
 
   if (!main) {
     return <div>Loading...</div>;
@@ -85,22 +81,16 @@ export default function RecyclePages({ params }: Params) {
   return (
     <div className="bg-green-50 min-h-screen w-full p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8">
-        <div className="flex justify-between items-center mb-6">
+        <div className=" flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-green-800">{main.title}</h1>
-          <Image
-            className="object-cover rounded-lg"
-            src={main.imgUrl}
-            alt={main.title}
-            width={160}
-            height={160}
-          />
+          <Image src={main.imgUrl} alt={main.title} width={160} height={160} />
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {detail.map((item) => (
             <Link
               onClick={() => onClick(item)}
               key={item._id}
-              href={`/recycle/${params.title}/${item.title}`}
+              href={`/recycle/${params.type}/${item.title}`}
             >
               <div className="border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer">
                 <div className="flex justify-between items-start">

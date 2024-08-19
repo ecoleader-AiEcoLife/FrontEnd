@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface RecycleProps {
-  id: string;
   title: string;
   imgUrl: string;
 }
@@ -17,13 +16,7 @@ export default function Card({ title, imgUrl }: RecycleProps) {
           </div>
           <div className="relative flex-grow">
             {imgUrl && (
-              <Image
-                src={imgUrl}
-                alt="사진 없음"
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
+              <Image src={imgUrl} alt={title} fill className="object-cover" />
             )}
           </div>
         </div>

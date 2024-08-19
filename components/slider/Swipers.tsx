@@ -21,7 +21,7 @@ export default function Swipers() {
   const getRecycles = async () => {
     try {
       const response = await axios.get("/api/recycle");
-      setRecycles(response.data.recycle);
+      setRecycles(response.data);
     } catch (err) {
       console.error("Error fetching recycles:", err);
     }
@@ -67,7 +67,7 @@ export default function Swipers() {
           >
             {recycles.map((item) => (
               <SwiperSlide key={item.id}>
-                <Card id={item.id} title={item.title} imgUrl={item.imgUrl} />
+                <Card title={item.title} imgUrl={item.imgUrl} />
               </SwiperSlide>
             ))}
           </Swiper>
