@@ -11,8 +11,12 @@ export async function GET(req: NextRequest) {
         const typeParam = url.searchParams.get("type");
         const type = typeParam ? decodeURIComponent(typeParam).trim() : null;
 
-        const recycledetail = await RecycleDetail.find({ type: type});
-        console.log("리사이클링 디테일: ", recycledetail);
+        if(type){
+            const recycledetail2 = await RecycleDetail.find({ type: type});
+            return NextResponse.json(recycledetail2, { status: 200 });
+        }
+
+        const recycledetail = await RecycleDetail.find({});
         return NextResponse.json(recycledetail, { status: 200 });
 
     } catch (error) {

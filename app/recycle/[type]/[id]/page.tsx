@@ -3,13 +3,6 @@
 import { useRecycleStore } from "@/store/RecycleStore";
 import Image from "next/image";
 
-interface DetailProps {
-  params: {
-    title: string;
-    id: string;
-  };
-}
-
 export default function DetailPages() {
   const { title, type, imgUrl, context, subcontext } = useRecycleStore();
 
