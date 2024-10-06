@@ -11,7 +11,9 @@
 - **URL**: [https://eddy-eco.vercel.app/](https://eddy-eco.vercel.app/)
 - **기간**: 2024/07 - 2024/09
 - **협업**: 대구 지방청과 협업을 맺어 진행한 팀 프로젝트 (백엔드, AI 협업)
-- **나의 역할** - FullStack (Frontend, Backend 모두 담당)
+
+## **프로젝트 내 나의 역할** 
+-  FullStack (Frontend - Next.JS, Backend - MongoDB 모두 담당)
 
 ## 🛠 기술 스택
 
