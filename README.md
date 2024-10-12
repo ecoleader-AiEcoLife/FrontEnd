@@ -6,10 +6,16 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Zustand](https://img.shields.io/badge/zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
+## 11월 리팩토링 및 기능 추가 예정
+1) 리팩토링 (전체적인 design , layout, 리랜더링 최적화, 컴포넌트)
+2) 챗봇 기능 추가 (AI)
+
+# 배포 (CI/CD)
+**URL** : [https://eddy-eco.vercel.app/](https://eddy-eco.vercel.app/)
+
 ## 📌 프로젝트 개요
 
-- **URL**: [https://eddy-eco.vercel.app/](https://eddy-eco.vercel.app/)
-- **기간**: 2024/07 - 2024/09
+- **기간**: 2024/07 - 2024/09 (리팩토링 예정)
 - **협업**: 대구 지방청과 협업을 맺어 진행한 팀 프로젝트 (백엔드, AI 협업)
 
 ## **프로젝트 내 나의 역할** 
