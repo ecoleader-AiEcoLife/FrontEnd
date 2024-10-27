@@ -35,7 +35,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className='relative bg-slate-100 flex justify-center items-center h-screen '>
+    <div className='relative bg-slate-100 flex justify-center items-center h-screen'>
       <Image
         src='/nature.webp'
         fill
@@ -77,12 +77,12 @@ export default function LoginPage() {
           )}
 
           <div className='flex justify-between'>
-            <p className='text-blue-700 font-semibold text-[13px]'>
+            <p className='text-blue-700 font-semibold text-[14px]'>
               계정이 없으신가요?
             </p>
             <Link
               href={'/register'}
-              className='text-blue-800 text-[14px] font-bold hover:scale-105'
+              className='text-blue-800 text-[15px] font-bold hover:scale-105'
             >
               가입하기
             </Link>
