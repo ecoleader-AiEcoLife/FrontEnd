@@ -34,15 +34,17 @@ export default function News() {
   }, []);
 
   return (
-    <div className='max-w-3xl mx-auto'>
-      <h1 className='bg-green-400 text-2xl font-bold mb-4 text-center rounded-md'>
-        재활용 관련 뉴스
-      </h1>
+    <div className='max-w-3xl mx-auto my-8'>
+      <div className='bg-emerald-400 rounded-md py-2 mb-4 text-center'>
+        <h1 className='text-white text-2xl font-semibold'>
+          오늘의 재활용 뉴스
+        </h1>
+      </div>
       <ul className='space-y-4'>
         {news.map((item) => (
           <li
             key={item.link}
-            className='bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow hover:scale-105 duration-200'
+            className='bg-white/60 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow hover:scale-105 duration-200'
           >
             <div className='p-6'>
               <h2
@@ -57,7 +59,7 @@ export default function News() {
                 href={item.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-blue-600 hover:text-blue-800 transition-colors duration-300'
+                className='text-blue-700'
               >
                 자세히 보기
               </a>

@@ -40,8 +40,17 @@ export default function Page() {
         </div>
       </section>
 
-      <section className='w-full my-[100px]'>
-        <News />
+      <section className='relative w-full'>
+        <Image
+          src='/nature.webp'
+          fill
+          priority
+          alt='nature background'
+          className='object-cover'
+        />
+        <div className='relative z-10'>
+          <News />
+        </div>
       </section>
     </main>
   );
