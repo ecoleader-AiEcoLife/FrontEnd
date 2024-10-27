@@ -35,7 +35,7 @@ export default function News() {
 
   return (
     <div className='max-w-3xl mx-auto'>
-      <h1 className='bg-green-400 text-2xl font-bold mb-4 text-center'>
+      <h1 className='bg-green-400 text-2xl font-bold mb-4 text-center rounded-md'>
         재활용 관련 뉴스
       </h1>
       <ul className='space-y-4'>
