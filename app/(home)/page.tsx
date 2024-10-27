@@ -1,5 +1,3 @@
-'use client';
-
 import News from '@/components/news/News';
 import Search from '@/components/search/Search';
 import Swipers from '@/components/slider/Swipers';
@@ -27,7 +25,13 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className='w-full my-[10px]'>
+      {/* 
+      <section className='w-full my-[50px]'>
+        <AddTodoForm />
+        <TodoList />
+      </section>
+      */}
+      <section className='w-full'>
         <div className='mb-[50px]'>
           <Search />
         </div>
@@ -35,6 +39,7 @@ export default function Page() {
           <Swipers />
         </div>
       </section>
+
       <section className='w-full my-[100px]'>
         <News />
       </section>
