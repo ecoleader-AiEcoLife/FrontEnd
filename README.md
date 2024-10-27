@@ -102,4 +102,9 @@
 npm run dev
 # 또는
 yarn dev
+<<<<<<< HEAD
 ```
+
+=======
+
+> > > > > > > c16b04f8d2079bf7be89fe0d884ed0aa17a246fe
