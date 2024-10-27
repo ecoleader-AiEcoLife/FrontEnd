@@ -1,36 +1,39 @@
-"use client";
+'use client';
 // json-server --watch db.json --port 3001
 
-import News from "@/components/news/News";
-import Search from "@/components/search/Search";
-import Swipers from "@/components/slider/Swipers";
-import AddTodoForm from "@/components/todo/AddTodoForm";
-import TodoList from "@/components/todo/TodoList";
+import News from '@/components/news/News';
+import Search from '@/components/search/Search';
+import Swipers from '@/components/slider/Swipers';
+import AddTodoForm from '@/components/todo/AddTodoForm';
+import TodoList from '@/components/todo/TodoList';
+import Image from 'next/image';
 
 export default function Page() {
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-6 sm:mb-8 lg:mb-10">
-          <Search />
-          <div className="mt-4 sm:mt-6">
-            <Swipers />
+    <main className='w-full min-h-screen flex flex-col items-center'>
+      <section className='relative w-full h-[700px]'>
+        <Image
+          alt='saveforest-bg'
+          src='/saveforest.webp'
+          fill
+          priority
+          className='object-cover w-full brightness-75'
+        />
+        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
+          <h1 className='font-bold text-white text-[50px]'>MAKE THIS WORLD</h1>
+          <div className='bg-black/50 mt-4 p-1 rounded-xl'>
+            <h2 className='font-semibold text-white text-[30px] text-center'>
+              The Better Place
+            </h2>
           </div>
         </div>
-        <div className="bg-green-200 bg-opacity-60 shadow-lg rounded-lg mt-6 p-4 sm:p-6 lg:p-8">
-          <h1 className="text-center font-bold text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6">
-            재활용품 장바구니
-          </h1>
-          <AddTodoForm />
-          <div className="mt-4 sm:mt-6">
-            <TodoList />
-          </div>
-        </div>
+      </section>
+      <div className='w-full my-[10px] shadow-lg'>
+        <Swipers />
       </div>
-
-      <div className="mt-8 sm:mt-10 lg:mt-12">
+      <section className='w-full my-[100px]'>
         <News />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
