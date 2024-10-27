@@ -44,7 +44,7 @@ export default function News() {
         {news.map((item) => (
           <li
             key={item.link}
-            className='bg-white/60 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow hover:scale-105 duration-200'
+            className='bg-white/60 rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 duration-200'
           >
             <div className='p-6'>
               <h2

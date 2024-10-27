@@ -6,31 +6,38 @@ import Card from './Card';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 
-interface RecycleProps {
-  id: string;
-  title: string;
-  imgUrl: string;
-}
+const recycles = [
+  {
+    id: '1',
+    title: '종이류',
+    imgUrl: '/recycle/paper.webp',
+  },
+  {
+    id: '2',
+    title: '플라스틱류',
+    imgUrl: '/recycle/plastic.webp',
+  },
+  {
+    id: '3',
+    title: '금속류',
+    imgUrl: '/recycle/metal.webp',
+  },
+  {
+    id: '4',
+    title: '유리병류',
+    imgUrl: '/recycle/glass.webp',
+  },
+  {
+    id: '5',
+    title: '의류',
+    imgUrl: '/recycle/cloth.webp',
+  },
+];
 
 export default function Swipers() {
-  const [recycles, setRecycles] = useState<RecycleProps[]>([]);
   const [currentCard, setCurrentCard] = useState(0);
-
-  const getRecycles = async () => {
-    try {
-      const response = await axios.get('/api/recycle');
-      setRecycles(response.data);
-    } catch (err) {
-      console.error('Error fetching recycles:', err);
-    }
-  };
-
-  useEffect(() => {
-    getRecycles();
-  }, []);
 
   return (
     <main className='w-full flex flex-col justify-center items-center'>
