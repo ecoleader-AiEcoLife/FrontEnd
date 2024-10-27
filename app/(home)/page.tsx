@@ -1,5 +1,4 @@
 'use client';
-// json-server --watch db.json --port 3001
 
 import News from '@/components/news/News';
 import Search from '@/components/search/Search';
@@ -11,7 +10,7 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <main className='w-full min-h-screen flex flex-col items-center'>
-      <section className='relative w-full h-[700px]'>
+      <section className='relative w-full h-[500px] md:h-[600] lg:h-[750px]'>
         <Image
           alt='saveforest-bg'
           src='/saveforest.webp'
@@ -28,9 +27,14 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <div className='w-full my-[10px] shadow-lg'>
-        <Swipers />
-      </div>
+      <section className='w-full my-[10px]'>
+        <div className='mb-[50px]'>
+          <Search />
+        </div>
+        <div className='shadow-lg'>
+          <Swipers />
+        </div>
+      </section>
       <section className='w-full my-[100px]'>
         <News />
       </section>
