@@ -52,7 +52,7 @@ export default function Search() {
 
   return (
     <div className='w-full flex flex-col justify-center items-center mt-10 gap-2 '>
-      <h1 className='font-bold text-lg'>
+      <h1 className='font-bold text-[14px] lg:text-[30px]'>
         원하시는 제품에 대한 재활용 정보를 빠르게 검색해보세요!
       </h1>
       <div>
