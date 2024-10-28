@@ -21,7 +21,7 @@ export default function About() {
         alt='nature background'
         className='object-cover'
       />
-      <div className='z-10 bg-green-200/30 text-[20px] font-semibold py-8 flex flex-col justify-center items-center'>
+      <div className='z-10 bg-green-200/30 text-[18px] font-semibold py-8 flex flex-col justify-center items-center'>
         <div className='pb-3'>
           <span>안녕하세요, 경북대학교 컴퓨터학부 </span>
           <span className='font-bold text-[25px] text-green-500'>Eddy </span>
