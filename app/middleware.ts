@@ -6,11 +6,10 @@ export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
   const { pathname } = req.nextUrl;
 
-  // 조건문을 더 명확하게 구분
   if (!token && (
     pathname.startsWith('/chatbot') || 
     pathname.startsWith('/map') || 
-    pathname.startsWith('/board/newboard')
+    pathname.startsWith('/board')
   )) {
     return NextResponse.redirect(new URL('/login', req.url));
   }
@@ -19,5 +18,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/chatbot/:path*', '/map/:path*', '/board/newboard'],
+  matcher: ['/chatbot/:path*', '/map/:path*', '/board/:path*'],
 };
