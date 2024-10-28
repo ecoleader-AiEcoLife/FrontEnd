@@ -125,14 +125,14 @@ export default function LinksNav() {
           {session ? (
             <button
               onClick={handleAuthAction}
-              className='bg-red-400 px-3 py-2 rounded-lg font-semibold text-white hover:bg-red-500 transition-colors'
+              className='bg-red-400 px-3 my-1 py-1 rounded-lg font-semibold text-white hover:bg-red-500 transition-colors'
             >
               Sign Out
             </button>
           ) : (
             <Link
               href='/login'
-              className='bg-green-400 px-3 py-2 rounded-lg font-semibold text-white hover:bg-green-500 transition-colors'
+              className='bg-green-400 px-3 my-1 py-1 rounded-lg font-semibold text-white hover:bg-green-500 transition-colors'
             >
               Sign In
             </Link>
