@@ -13,7 +13,7 @@
 
 # 배포 (CI/CD)
 
-**URL** : [https://eddy-eco.vercel.app/](https://eddy-eco.vercel.app/)
+**URL** : https://www.ecobuddy.life/
 
 ## 📌 프로젝트 개요
 
