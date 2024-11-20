@@ -18,3 +18,13 @@ export const connectMongoDB = async () => {
     throw error;
   }
 };
+
+// runtime 설정 추가
+export const config = {
+  matcher: [
+    '/board/:path*',
+    '/map/:path*',
+    '/chatbot/:path*'
+  ],
+  runtime: 'nodejs'  // 여기에 추가
+}
