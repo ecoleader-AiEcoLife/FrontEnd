@@ -13,7 +13,7 @@
 
 # 배포 (CI/CD)
 
-**URL** : [https://eddy-eco.vercel.app/](https://eddy-eco.vercel.app/)
+**URL** : https://www.ecobuddy.life/
 
 ## 📌 프로젝트 개요
 
@@ -106,5 +106,3 @@ yarn dev
 ```
 
 =======
-
-> > > > > > > c16b04f8d2079bf7be89fe0d884ed0aa17a246fe
