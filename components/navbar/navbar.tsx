@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Logo from '../ui/Logo';
 import LinksNav from './LinksNav';
