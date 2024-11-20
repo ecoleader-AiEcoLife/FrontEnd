@@ -39,7 +39,7 @@ export default function MapPage() {
         }
       );
     } else {
-      // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정함
+      // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정
       setState((prev: any) => ({
         ...prev,
         errMsg: 'geolocation을 사용할수 없습니다.',
