@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+export const runtime = 'nodejs'
+
 export const connectMongoDB = async () => {
   try {
     if (mongoose.connection.readyState === 1) {
@@ -19,12 +21,3 @@ export const connectMongoDB = async () => {
   }
 };
 
-// runtime 설정 추가
-export const config = {
-  matcher: [
-    '/board/:path*',
-    '/map/:path*',
-    '/chatbot/:path*'
-  ],
-  runtime: 'nodejs'  // 여기에 추가
-}
