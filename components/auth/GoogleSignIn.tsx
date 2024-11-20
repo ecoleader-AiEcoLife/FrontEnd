@@ -1,4 +1,4 @@
-import { signIn } from '@/app/auth';
+import { signIn } from '@/auth';
 
 export default function GoogleSignIn() {
   return (

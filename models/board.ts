@@ -1,10 +1,15 @@
-import mongoose, { models, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const boardSchema = new Schema(
   {
     id: {
         type:String,
         required: true,
+    },
+    
+    writer: {
+      type: String,
+      required: true,
     },
 
     title: {

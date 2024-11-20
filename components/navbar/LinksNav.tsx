@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { useSession, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import SignOutButton from '../auth/SignOutButton';
+import Image from 'next/image';
 
 export default function LinksNav() {
   const { data: session } = useSession();
@@ -25,7 +26,19 @@ export default function LinksNav() {
 
       <div className='absolute top-0 right-1 hidden lg:flex justify-center items-center'>
         {session ? (
-          <SignOutButton />
+          <>
+            <div className='flex gap-4 items-center mr-6'>
+              <h1 className='text-white text-lg font-semibold'>{session.user?.name} 님</h1>
+              <Image
+                src={session.user?.image || '/defaultProfile.webp'}
+                width={40}
+                height={40}
+                className='rounded-full'
+                alt='user-image'
+              />
+            </div>
+            <SignOutButton />
+          </>
         ) : (
           <Link
             href='/login'

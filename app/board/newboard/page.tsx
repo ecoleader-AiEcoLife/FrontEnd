@@ -1,6 +1,7 @@
 'use client';
 
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -16,6 +17,7 @@ export default function Newboard() {
   const [board, setBoard] = useState<boardProps[]>([]);
   const [newTitle, setNewTitle] = useState<string>('');
   const [newBody, setNewBody] = useState<string>('');
+  const { data: session } = useSession();
 
   const today = new Date();
 
@@ -39,11 +41,10 @@ export default function Newboard() {
       const newId = board.length + 1;
       const res = await axios.post('/api/board', {
         id: newId,
+        writer: session?.user?.name,
         title: newTitle,
         body: newBody,
-        date: `${today.getFullYear()}년 ${
-          today.getMonth() + 1
-        }월 ${today.getDate()}일`,
+        date: `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`,
       });
 
       if (res.status === 201) {
@@ -62,21 +63,10 @@ export default function Newboard() {
 
   return (
     <div className='relative flex justify-center items-center min-h-screen mx-auto'>
-      <Image
-        src='/nature.webp'
-        fill
-        priority
-        alt='nature background'
-        className='object-cover'
-      />
+      <Image src='/nature.webp' fill priority alt='nature background' className='object-cover' />
       <div className='z-10 bg-emerald-200/40 p-8 rounded-lg shadow-lg w-full max-w-2xl'>
-        <h1 className='text-center bg-green-400 rounded-md my-4 py-2 text-xl font-bold'>
-          새 게시글 작성
-        </h1>
-        <form
-          className='flex flex-col gap-6'
-          onSubmit={(e) => e.preventDefault()}
-        >
+        <h1 className='text-center bg-green-400 rounded-md my-4 py-2 text-xl font-bold'>새 게시글 작성</h1>
+        <form className='flex flex-col gap-6' onSubmit={(e) => e.preventDefault()}>
           <input
             type='text'
             placeholder='제목을 입력해주세요.'

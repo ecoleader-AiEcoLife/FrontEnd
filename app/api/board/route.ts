@@ -8,11 +8,9 @@ export async function GET(req: NextRequest) {
         await connectMongoDB();
         const url = new URL(req.url)
         const id = url.searchParams.get('id')
-        console.log("아이디", id)
 
         if(id){
             const board2 = await Board.find({ id: id});
-            console.log("출력",board2)
             return NextResponse.json(board2, { status: 200 });
         }
 
@@ -30,11 +28,10 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req:NextRequest){
     try{
-    const {id,title,body,date} = await req.json()
-    console.log('출력:', id,title,body,date)
+    const {id,writer,title,body,date} = await req.json()
 
     await connectMongoDB();
-    await Board.create({id, title, body, date});
+    await Board.create({id, writer, title, body, date});
 
 
     return NextResponse.json({message:"Board registered."}, {status:201})

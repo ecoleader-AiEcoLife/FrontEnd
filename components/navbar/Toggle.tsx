@@ -10,24 +10,31 @@ export default function Toggle() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
 
-  const handleAuthAction = () => {
-    if (session) {
-      signOut({ callbackUrl: '/' });
-    }
-  };
-
   return (
-    <div className='relative mr-5'>
-      <div className='lg:hidden'>
-        <Image
-          className='bg-emerald-800 cursor-pointer hover:bg-emerald-700 rounded-md p-1 '
-          src='/toggle.svg'
-          width={45}
-          height={45}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          alt='Toggle menu'
-        />
-      </div>
+    <div className='lg:hidden relative mr-5 flex justify-center items-center w-full'>
+      {session && (
+        <section className='w-full flex-1 flex justify-center items-center mr-6'>
+          <h1 className='text-center text-white text-lg font-semibold mr-8 whitespace-nowrap '>
+            {session?.user?.name} 님
+          </h1>
+          <Image
+            src={session.user?.image || '/defaultprofile.webp'}
+            width={40}
+            height={40}
+            className='rounded-full'
+            alt='user-image'
+          />
+        </section>
+      )}
+
+      <Image
+        className='bg-emerald-800 cursor-pointer hover:bg-emerald-700 rounded-md p-1 '
+        src='/toggle.svg'
+        width={45}
+        height={45}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        alt='Toggle menu'
+      />
 
       {isMenuOpen && (
         <div className='z-10 w-[120px] font-semibold lg:hidden absolute top-full right-0 bg-emerald-800 p-4 mt-2 rounded-lg shadow-lg'>
