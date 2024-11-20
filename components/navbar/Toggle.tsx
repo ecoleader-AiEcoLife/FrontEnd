@@ -4,6 +4,7 @@ import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import SignOutButton from '../auth/SignOutButton';
 
 export default function Toggle() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,12 +44,7 @@ export default function Toggle() {
             재활용 지도
           </Link>
           {session ? (
-            <button
-              onClick={handleAuthAction}
-              className='bg-red-400 px-3 my-1 py-1 rounded-lg font-semibold text-white hover:bg-red-500 transition-colors'
-            >
-              Sign Out
-            </button>
+            <SignOutButton />
           ) : (
             <Link
               href='/login'

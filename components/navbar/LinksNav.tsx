@@ -1,15 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
+import SignOutButton from '../auth/SignOutButton';
 
 export default function LinksNav() {
   const { data: session } = useSession();
-
-  const handleAuthAction = () => {
-    if (session) {
-      signOut({ callbackUrl: '/' });
-    }
-  };
 
   return (
     <div className='relative flex items-center justify-center w-full'>
@@ -30,12 +25,7 @@ export default function LinksNav() {
 
       <div className='absolute top-0 right-1 hidden lg:flex justify-center items-center'>
         {session ? (
-          <button
-            onClick={handleAuthAction}
-            className='bg-red-500 px-3 py-2 rounded-lg font-semibold text-white hover:bg-red-600 transition-colors'
-          >
-            Sign Out
-          </button>
+          <SignOutButton />
         ) : (
           <Link
             href='/login'
