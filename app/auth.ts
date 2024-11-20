@@ -1,9 +1,8 @@
-// auth.ts
-import NextAuth from "next-auth"
-import Google from "next-auth/providers/google"
-import Credentials from "next-auth/providers/credentials"
-import { connectMongoDB } from "@/lib/mongodb"
-import { User, type IUser } from "@/models/user"
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+import Google from 'next-auth/providers/google';
+import User from '../models/user'
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -17,26 +16,34 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error("Missing credentials");
-        }
-
         try {
-          await connectMongoDB()
-          const user = await User.findOne({ email: credentials.email }).exec();
+          if (!credentials?.email || !credentials?.password) {
+            throw new Error("Missing credentials");
+          }
+
+          const user = await User.findOne({ email: credentials.email });
 
           if (!user) {
             throw new Error("Invalid email");
           }
 
+          const isPasswordValid = await bcrypt.compare(
+            credentials.password as string,  
+            user.password
+          );
+
+          if (!isPasswordValid) {
+            throw new Error("Invalid password");
+          }
+
           return {
-            id: user._id.toString(),  // ObjectId를 문자열로 변환
+            id: user._id.toString(),
             email: user.email,
             name: user.name
           }
         } catch (error) {
-          console.error('Auth error:', error);
-          throw error;
+           console.error('Auth error:', error);
+           throw new Error("Login Error");
         }
       },
     }),
@@ -54,6 +61,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return session;
     },
+  },
+  session: {
+    strategy: "jwt",
   },
   pages: {
     signIn: '/login',

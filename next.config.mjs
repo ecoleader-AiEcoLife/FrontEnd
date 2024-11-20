@@ -9,10 +9,6 @@ const nextConfig = {
       },
     ],
   },
-
-  experimental: {
-    runtime: 'nodejs', // Edge 대신 Node.js 환경 사용
-  },
 };
 
 export default nextConfig;

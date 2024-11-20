@@ -13,7 +13,7 @@
     "@types/bcryptjs": "^2.4.6",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
-    "mongoose": "^8.5.2",
+    "mongoose": "^8.8.2",
     "next": "^15.0.3",
     "next-auth": "^5.0.0-beta.25",
     "react": "^18.3.1",

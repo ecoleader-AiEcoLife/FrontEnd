@@ -1,5 +1,3 @@
-export const runtime = 'nodejs';
-
 import mongoose from "mongoose";
 
 export const connectMongoDB = async () => {
