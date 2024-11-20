@@ -1,6 +1,8 @@
 // models/user.ts
 import mongoose, { Model, Document, Types } from "mongoose";
 
+export const runtime = 'nodejs' 
+
 // User 문서의 인터페이스 정의에 _id 추가
 interface IUser extends Document {
   _id: Types.ObjectId;  // MongoDB ObjectId 타입 명시
