@@ -1,25 +1,29 @@
-// middleware.ts
-import { auth } from "@/auth"
+import { auth } from '@/auth'
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 const protectedPaths = ['/board', '/map', '/chatbot']
 
 export async function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname
+  try {
+    const path = request.nextUrl.pathname
 
-  // 보호된 경로 체크
-  if (protectedPaths.some(protectedPath => path.startsWith(protectedPath))) {
-    const session = await auth()
-    
-    if (!session) {
-      const loginUrl = new URL('/login', request.url)
-      loginUrl.searchParams.set('callbackUrl', path)
-      return NextResponse.redirect(loginUrl)
+    if (protectedPaths.some(protectedPath => path.startsWith(protectedPath))) {
+      const session = await auth()
+      
+      if (!session) {
+        const loginUrl = new URL('/login', request.url)
+        loginUrl.searchParams.set('callbackUrl', path)
+        return NextResponse.redirect(loginUrl)
+      }
     }
-  }
 
-  return NextResponse.next()
+    return NextResponse.next()
+  } catch (error) {
+    console.error("Middleware error:", error)
+    // 에러 발생 시에도 로그인 페이지로 리다이렉트
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
 }
 
 export const config = {
