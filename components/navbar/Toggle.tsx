@@ -11,14 +11,14 @@ export default function Toggle() {
   const { data: session } = useSession();
 
   return (
-    <div className='lg:hidden relative mr-5 flex justify-center items-center w-full'>
+    <div className='lg:hidden relative mr-5 flex justify-end items-center w-full'>
       {session && (
-        <section className='w-full flex-1 flex justify-center items-center mr-6'>
-          <h1 className='text-center text-white text-lg font-semibold mr-8 whitespace-nowrap '>
+        <section className='w-full flex-1 flex justify-center items-center mr-[30px]'>
+          <h1 className='text-center text-white text-lg font-semibold mr-2 whitespace-nowrap '>
             {session?.user?.name} 님
           </h1>
           <Image
-            src={session.user?.image || '/defaultprofile.webp'}
+            src={session.user?.image || '/defaultProfile.webp'}
             width={40}
             height={40}
             className='rounded-full'
@@ -28,7 +28,7 @@ export default function Toggle() {
       )}
 
       <Image
-        className='bg-emerald-800 cursor-pointer hover:bg-emerald-700 rounded-md p-1 '
+        className='bg-emerald-800 cursor-pointer hover:bg-emerald-700 rounded-md p-1'
         src='/toggle.svg'
         width={45}
         height={45}
