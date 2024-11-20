@@ -4,10 +4,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
+  },
+
+  experimental: {
+    runtime: 'nodejs', // Edge 대신 Node.js 환경 사용
   },
 };
 
