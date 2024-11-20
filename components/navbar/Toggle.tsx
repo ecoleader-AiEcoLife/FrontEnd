@@ -37,7 +37,7 @@ export default function Toggle() {
       />
 
       {isMenuOpen && (
-        <div className='z-10 w-[120px] font-semibold lg:hidden absolute top-full right-0 bg-emerald-800 p-4 mt-2 rounded-lg shadow-lg'>
+        <div className='z-50 w-[120px] font-semibold lg:hidden absolute top-full right-0 bg-emerald-800 p-4 mt-2 rounded-lg shadow-lg'>
           <Link href='/about' className='block py-2 text-white hover:text-emerald-200'>
             About us
           </Link>
