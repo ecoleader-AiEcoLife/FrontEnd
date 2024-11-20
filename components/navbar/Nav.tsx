@@ -3,7 +3,7 @@ import LinksNav from './LinksNav';
 import Link from 'next/link';
 import Toggle from './Toggle';
 
-export default function Navbar() {
+export default function Nav() {
   return (
     <nav className='w-full h-[80px] bg-emerald-600 flex justify-between items-center '>
       <Link href='/' className=' w-[100px] flex justify-center hover:scale-105 transform duration-200 ml-[30px]'>
