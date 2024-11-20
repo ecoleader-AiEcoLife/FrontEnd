@@ -15,7 +15,6 @@ interface boardProps {
 
 export default function BoardPage() {
   const [board, setBoard] = useState<boardProps[]>([]);
-
   const router = useRouter();
 
   const getBoard = async () => {
@@ -53,7 +52,7 @@ export default function BoardPage() {
               <tr key={item.id} className='hover:bg-gray-50'>
                 <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{item.id}</td>
                 <td
-                  className='px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:underline cursor-pointer'
+                  className='px-6 py-4 text-sm text-blue-600 hover:underline cursor-pointer truncate max-w-[200px] lg:max-w-[500px]'
                   onClick={() => handleClick(item.id)}
                 >
                   {item.title}
