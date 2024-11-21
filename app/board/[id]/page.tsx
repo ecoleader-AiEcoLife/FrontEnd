@@ -11,17 +11,23 @@ interface BoardProps {
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-
-interface Params {
-  params: {
-    id: string;
-  };
-}
+import { useSession } from 'next-auth/react';
 
 export default function InfoPost() {
   const [board, setBoard] = useState<BoardProps | null>(null);
   const router = useRouter();
   const { id } = useParams();
+
+  const { data: session } = useSession();
+
+  if (!session) {
+    return (
+      <div className='w-full min-h-screen flex flex-col justify-center items-center text-[20px] font-bold gap-[10px]'>
+        <h1>죄송합니다.</h1>
+        <h1>이 페이지를 이용하시려면 로그인을 하십시오.</h1>
+      </div>
+    );
+  }
 
   const getBoard = async () => {
     try {

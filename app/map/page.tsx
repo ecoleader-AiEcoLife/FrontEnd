@@ -1,6 +1,7 @@
 'use client';
 
 import Addmarkers from '@/components/maps/Addmarkets';
+import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import { Map, MapMarker, useKakaoLoader } from 'react-kakao-maps-sdk';
 

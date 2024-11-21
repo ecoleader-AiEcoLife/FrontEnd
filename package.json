@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.0.2",
     "@heroicons/react": "^2.1.4",
     "@types/bcryptjs": "^2.4.6",
+    "ai": "^4.0.2",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.8.2",

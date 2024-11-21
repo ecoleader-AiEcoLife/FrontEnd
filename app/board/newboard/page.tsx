@@ -23,6 +23,15 @@ export default function Newboard() {
 
   const router = useRouter();
 
+  if (!session) {
+    return (
+      <div className='w-full min-h-screen flex flex-col justify-center items-center text-[20px] font-bold gap-[10px]'>
+        <h1>죄송합니다.</h1>
+        <h1>이 페이지를 이용하시려면 로그인을 하십시오.</h1>
+      </div>
+    );
+  }
+
   const getBoard = async () => {
     try {
       const res = await axios.get<boardProps[]>('/api/board');
