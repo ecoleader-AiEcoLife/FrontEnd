@@ -2,6 +2,12 @@ import Link from 'next/link';
 import Boards from './_components/Boards';
 
 export default function BoardPage() {
+  const session = await auth();
+
+  if (!session) {
+    redirect('/login');
+  }
+
   return (
     <div className='container mx-auto p-6'>
       <h1 className='text-3xl font-bold mb-6 text-center text-gray-800'>정보 게시판</h1>
