@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
     try {
         await connectMongoDB();
 
-        // URL에서 'type' 파라미터를 가져와 디코딩합니다.
+        // URL에서 'type' 파라미터를 가져와 디코딩
         const url = new URL(req.url);
         const typeParam = url.searchParams.get("type");
         const type = typeParam ? decodeURIComponent(typeParam).trim() : null;

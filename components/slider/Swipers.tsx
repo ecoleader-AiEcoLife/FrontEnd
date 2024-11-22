@@ -26,7 +26,7 @@ const recycles = [
   },
   {
     id: '4',
-    title: '유리병류',
+    title: '유리류',
     imgUrl: '/recycle/glass.webp',
   },
   {
@@ -85,9 +85,7 @@ export default function Swipers() {
       ) : (
         <p>Loading...</p>
       )}
-      <h2 className='pt-3 pb-5 font-semibold text-center text-sm sm:text-base'>
-        클릭하여 자세한 정보를 알아보아요!
-      </h2>
+      <h2 className='pt-3 pb-5 font-semibold text-center text-sm sm:text-base'>클릭하여 자세한 정보를 알아보아요!</h2>
     </main>
   );
 }
