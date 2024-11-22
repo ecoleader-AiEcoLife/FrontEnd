@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <AuthProvider>
-          <main className='pt-[80px]'>
+          <main className='mt-[80px]'>
             <Nav />
             {children}
           </main>
