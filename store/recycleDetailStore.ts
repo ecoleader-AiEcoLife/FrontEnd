@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from 'zustand/middleware';
 
 interface RecycleProps{
     title:string;
@@ -13,11 +14,17 @@ interface RecycleProps{
     setSubContext:(subcontext:string)=>void;
 }
 
-export const useRecycleStore = create<RecycleProps>((set)=>({
-    title:"", type:"", imgUrl:"", context:"", subcontext:"",
-    setTitle:(title:string)=>set({title}),
-    setType:(type:string)=>set({type}),
-    setImgUrl:(imgUrl:string)=>set({imgUrl}),
-    setContext:(context:string)=>set({context}),
-    setSubContext:(subcontext:string)=>set({subcontext})
-}))
+export const useRecycleStore = create(
+    persist<RecycleProps>(
+        (set)=>({
+        title:"", type:"", imgUrl:"", context:"", subcontext:"",
+        setTitle:(title:string)=>set({title}),
+        setType:(type:string)=>set({type}),
+        setImgUrl:(imgUrl:string)=>set({imgUrl}),
+        setContext:(context:string)=>set({context}),
+        setSubContext:(subcontext:string)=>set({subcontext})
+    }),
+    {
+        name:'recycle-storage'
+    } 
+))
