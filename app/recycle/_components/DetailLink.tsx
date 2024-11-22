@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRecycleStore } from '@/store/recycleStore';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import { useCategoryStore } from '@/store/categoryStore';
 
 interface DetailProps {
   _id: string;
@@ -17,6 +18,7 @@ interface DetailProps {
 }
 
 export default function DetailLink() {
+  const { title, imgUrl } = useCategoryStore();
   const [detail, setDetail] = useState<DetailProps[]>([]);
 
   const params = useParams(); // useparams하면 encode된 URL이 나옴
@@ -52,20 +54,26 @@ export default function DetailLink() {
   }, [type]);
 
   return (
-    <>
-      {detail.map((item) => (
-        <Link onClick={() => onClick(item)} key={item._id} href={`/recycle/${params.type}/${item.title}`}>
-          <div className='border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer'>
-            <div className='flex justify-between items-start'>
-              <div>
-                <h2 className='text-xl font-semibold text-gray-900 hover:text-green-600'>{item.title}</h2>
-                <p className='mt-2 text-sm text-gray-600'>재활용 분류: {item.type}</p>
+    <div className='max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8 mt-[100px]'>
+      <div className=' flex justify-between items-center mb-6'>
+        <h1 className='text-3xl font-bold text-green-800'>{title}</h1>
+        <Image src={imgUrl} alt={title} width={160} height={160} />
+      </div>
+      <div className='mt-6 grid grid-cols-1 md:grid-cols-2 gap-6'>
+        {detail.map((item) => (
+          <Link onClick={() => onClick(item)} key={item._id} href={`/recycle/${params.type}/${item.title}`}>
+            <div className='border rounded-lg p-4 hover:shadow-md transition duration-300 cursor-pointer'>
+              <div className='flex justify-between items-start'>
+                <div>
+                  <h2 className='text-xl font-semibold text-gray-900 hover:text-green-600'>{item.title}</h2>
+                  <p className='mt-2 text-sm text-gray-600'>재활용 분류: {item.type}</p>
+                </div>
+                <Image className='object-cover rounded' src={item.imgUrl} alt={item.title} width={80} height={80} />
               </div>
-              <Image className='object-cover rounded' src={item.imgUrl} alt={item.title} width={80} height={80} />
             </div>
-          </div>
-        </Link>
-      ))}
-    </>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
