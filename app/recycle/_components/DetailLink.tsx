@@ -54,10 +54,10 @@ export default function DetailLink() {
   }, [type]);
 
   return (
-    <div className='max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8 mt-[100px]'>
-      <div className=' flex justify-between items-center mb-6'>
-        <h1 className='text-3xl font-bold text-green-800'>{title}</h1>
-        <Image src={imgUrl} alt={title} width={160} height={160} />
+    <div className='z-20 mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-8 '>
+      <div className=' flex flex-col md:flex-row justify-between items-center mb-6'>
+        <h1 className='text-3xl font-bold text-green-800 mb-[20px] md:mb-0'>{title}</h1>
+        {imgUrl && <Image src={imgUrl} alt={title} width={160} height={160} className='rounded-xl' />}
       </div>
       <div className='mt-6 grid grid-cols-1 md:grid-cols-2 gap-6'>
         {detail.map((item) => (

@@ -6,8 +6,10 @@ export default function DetailPages() {
   const { title, type, imgUrl, context, subcontext } = useRecycleStore();
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-green-100 to-green-200 flex items-center justify-center p-4'>
-      <div className='bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl w-full'>
+    <div className='flex items-center justify-center p-4 mt-[200px]'>
+      <Image src='/nature.webp' fill priority alt='nature background' className='object-cover' />
+
+      <div className='z-10 bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl w-full'>
         <div className='relative h-64'>
           <Image src={imgUrl} alt={title} fill className='object-cover' />
           <div className='absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
