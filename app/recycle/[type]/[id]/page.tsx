@@ -1,5 +1,3 @@
-'use client';
-
 import { useRecycleStore } from '@/store/recycleStore';
 import Image from 'next/image';
 
