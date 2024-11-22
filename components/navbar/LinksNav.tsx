@@ -11,7 +11,7 @@ export default function LinksNav() {
     <div className='relative flex items-center justify-center w-full'>
       <div className='hidden text-lg lg:flex items-center space-x-6'>
         <Link href='/about'>
-          <span className='text-white font-bold hover:text-emerald-200'>About us</span>
+          <span className='text-white font-bold hover:text-emerald-200'>서비스 소개</span>
         </Link>
         <Link href='/board'>
           <span className='text-white font-bold hover:text-emerald-200'>정보게시판</span>
