@@ -7,7 +7,7 @@ export default function About() {
       <Image src='/nature.webp' fill priority alt='nature background' className='object-cover' />
 
       <div className='z-10 bg-white/80 backdrop-blur-lg shadow-lg rounded-lg p-6 text-center max-w-3xl mt-[100px]'>
-        <p className='flex justify-center text-lg mb-[20px] gap-2'>
+        <p className='flex justify-center text-sm md:text-lg mb-[20px] gap-2'>
           안녕하세요, 경북대학교 컴퓨터학부 <h1 className='font-bold text-green-500'> Eddy </h1> 입니다.
         </p>
         <h1 className='text-3xl font-bold text-green-600'>우리의 환경을 지키는 스마트 재활용 웹 서비스</h1>
