@@ -3,10 +3,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRecycleStore } from '@/store/recycleStore';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { useCategoryStore } from '@/store/categoryStore';
+import { useRecycleStore } from '@/store/recycleStore';
 
 interface DetailProps {
   _id: string;
