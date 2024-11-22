@@ -6,7 +6,7 @@ export default function DetailPages() {
   const { title, type, imgUrl, context, subcontext } = useRecycleStore();
 
   return (
-    <div className='flex items-center justify-center p-4 mt-[200px]'>
+    <div className='flex items-center justify-center p-4 mt-[100px]'>
       <Image src='/nature.webp' fill priority alt='nature background' className='object-cover' />
 
       <div className='z-10 bg-white rounded-lg shadow-xl overflow-hidden max-w-2xl w-full'>
