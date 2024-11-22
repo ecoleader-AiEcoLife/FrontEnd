@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Boards from './_components/Boards';
+import { auth } from '../auth';
+import { redirect } from 'next/navigation';
 
-export default function BoardPage() {
+export default async function BoardPage() {
   const session = await auth();
 
   if (!session) {
