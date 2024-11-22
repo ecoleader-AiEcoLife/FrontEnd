@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useCategoryStore } from '@/store/categoryStore';
-import DetailLink from '../_components/detailLink';
+import DetailLink from '../_components/DetailLink';
 
 export default function RecyclePages() {
   const { title, imgUrl } = useCategoryStore();
