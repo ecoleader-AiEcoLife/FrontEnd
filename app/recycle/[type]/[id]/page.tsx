@@ -1,5 +1,5 @@
 'use client';
-import { useRecycleStore } from '@/store/recycleStore';
+import { useRecycleStore } from '@/store/recycleDetailStore';
 import Image from 'next/image';
 
 export default function DetailPages() {
