@@ -22,7 +22,7 @@
 
 ## **프로젝트 내 나의 역할**
 
-- FullStack (Frontend - Next.JS, Backend - MongoDB 모두 담당)
+- FullStack (Frontend - Next.JS, Backend - MongoDB 모두 담당)  + AI 
 
 ## 🛠 기술 스택
 
