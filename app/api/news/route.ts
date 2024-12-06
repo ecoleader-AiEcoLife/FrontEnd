@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     const response = await axios.get(url, {
       params: { query, display, start, sort },
       headers: {
-        'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID,
+        'X-Naver-Client-Id': process.env.NAVER_NEWS_CLIENT_ID,
         'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET,
       },
     });
