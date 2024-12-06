@@ -22,7 +22,7 @@
 
 ## **프로젝트 내 나의 역할**
 
-- FullStack (Frontend - Next.JS, Backend - MongoDB 모두 담당)
+- FullStack (Frontend - Next.JS, Backend - MongoDB 모두 담당)  + AI 
 
 ## 🛠 기술 스택
 
@@ -35,6 +35,7 @@
 
 ### Backend
 
+- **mongoose**
 - **Database**: MongoDB
 
 ## 🌟 주요 기능
@@ -62,15 +63,11 @@
 
 5. **To-Do List**
    - Zustand 상태관리 라이브러리 사용
+  
+6. **Open AI**
 
-## 🚀 진행 중인 기능
-
-- 인공지능 AI GPT 통합
-- JWT를 이용한 회원가입 시스템
-
-## 💡 향후 계획
-
-- 장바구니 기능 추가
+   - AI Chat Bot
+   - AI 사진 제작
 
 ## 🔍 개발 과정에서 배운 점
 
